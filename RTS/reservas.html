@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,17 +11,17 @@
 
   <header>
     <h1>RTS - Route Tech System</h1>
-    <nav>
+    <nav aria-label="Navegação principal">
       <a href="index.html">Sair</a>
     </nav>
   </header>
 
   <div class="container">
-    <nav class="menu">
+    <nav class="menu" aria-label="Menu do gestor">
       <ul>
         <li><a href="painel.html">Dashboard</a></li>
-        <li class="atual"><a href="reservas.html">Reservas</a></li>
-        <li><a href="veiculos.html">Veiculos</a></li>
+        <li class="atual"><a href="reservas.html" aria-current="page">Reservas</a></li>
+        <li><a href="veiculos.html">Veículos</a></li>
         <li><a href="motoristas.html">Motoristas</a></li>
         <li><a href="manutencoes.html">Manutenções</a></li>
         <li><a href="relatorios.html">Relatórios</a></li>
@@ -29,108 +30,114 @@
     </nav>
 
     <main>
-      <h2>Reservas</h2>
-      <h4>Lista de reservas</h4>
+      <section>
+        <h2>Reservas</h2>
+        <h4>Lista de Reservas</h4>
 
-      <div class="filtros">
-        <button data-filtro="todos" class="ativo">Todos</button>
-        <button data-filtro="pendente">Pendente</button>
-        <button data-filtro="aprovado">Aprovado</button>
-        <button data-filtro="recusado">Recusado</button>
-      </div>
+        <div class="filtros">
+    <button type="button" data-filtro="todos" class="ativo">Todos</button>
+    <button type="button" data-filtro="pendente">Pendente</button>
+    <button type="button" data-filtro="aprovado">Aprovado</button>
+    <button type="button" data-filtro="recusado">Recusado</button>
+       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Solicitante</th>
-            <th>Veículo</th>
-            <th>Período</th>
-            <th>Destino</th>
-            <th>Finalidade</th>
-            <th>Prioridade</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
+        <table id="veiculos-filtros">
+          <thead>
+            <tr>
+              <th scope="col">Solicitante</th>
+              <th scope="col">Veículo</th>
+              <th scope="col">Período</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Finalidade</th>
+              <th scope="col">Prioridade</th>
+              <th scope="col">Status</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr data-status="pendente">
-            <td>Julia Ribeiro</td>
-            <td>Ford GT</td>
-            <td>01/01/2023 às 12:00 - 01/01/2023 às 18:00</td>
-            <td>Lauro de Freitas</td>
-            <td>Reunião</td>
-            <td>Alta</td>
-            <td class="status">Pendente</td>
-            <td>
-              <button class="aprovar">Aprovar</button>
-              <button class="recusar">Recusar</button>
-            </td>
-          </tr>
+          <tbody>
+            <tr data-status="pendente">
+              <td>Julia Ribeiro</td>
+              <td>Ford GT</td>
+              <td>01/01/2023 às 12:00 - 01/01/2023 às 18:00</td>
+              <td>Lauro de Freitas</td>
+              <td>Reunião</td>
+              <td>Alta</td>
+              <td class="status">Pendente</td>
+              <td>
+                <div class="botoes-acao">
+                  <button type="button" class="aprovar">Aprovar</button>
+                  <button type="button" class="recusar">Recusar</button>
+                </div>
+              </td>
+            </tr>
 
-          <tr data-status="pendente">
-            <td>Roberto</td>
-            <td>Flashback</td>
-            <td>04/11/2023 às 07:00 - 01/01/2023 às 12:00</td>
-            <td>Lauro de Freitas</td>
-            <td>Aula</td>
-            <td>Média</td>
-            <td class="status">Pendente</td>
-            <td>
-              <button class="aprovar">Aprovar</button>
-              <button class="recusar">Recusar</button>
-            </td>
-          </tr>
-        </tbody>
+            <tr data-status="pendente">
+              <td>Roberto</td>
+              <td>Flashback</td>
+              <td>04/11/2023 às 07:00 - 01/01/2023 às 12:00</td>
+              <td>Lauro de Freitas</td>
+              <td>Aula</td>
+              <td>Média</td>
+              <td class="status">Pendente</td>
+              <td>
+                <div class="botoes-acao">
+                  <button type="button" class="aprovar">Aprovar</button>
+                  <button type="button" class="recusar">Recusar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
 
-        <tbody>
-          <tr data-status="aprovado">
-            <td>Rogerio</td>
-            <td>Porsche 911</td>
-            <td>11/01/2023 às 12:00 - 11/01/2023 às 18:00</td>
-            <td>Lauro de Freitas</td>
-            <td>Aula</td>
-            <td>Media</td>
-            <td class="status">Aprovado</td>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr data-status="aprovado">
+              <td>Rogerio</td>
+              <td>Porsche 911</td>
+              <td>11/01/2023 às 12:00 - 11/01/2023 às 18:00</td>
+              <td>Lauro de Freitas</td>
+              <td>Aula</td>
+              <td>Media</td>
+              <td class="status">Aprovado</td>
+              <td></td>
+            </tr>
 
-          <tr data-status="aprovado">
-            <td>Caio Jovita</td>
-            <td>Toyota Corolla</td>
-            <td>08/01/2023 às 07:00 - 01/01/2023 às 12:00</td>
-            <td>Cimatech</td>
-            <td>Aula</td>
-            <td>Média</td>
-            <td class="status">Aprovado</td>
-            <td></td>
-          </tr>
-        </tbody>
+            <tr data-status="aprovado">
+              <td>Caio Jovita</td>
+              <td>Toyota Corolla</td>
+              <td>08/01/2023 às 07:00 - 01/01/2023 às 12:00</td>
+              <td>Cimatech</td>
+              <td>Aula</td>
+              <td>Média</td>
+              <td class="status">Aprovado</td>
+              <td></td>
+            </tr>
+          </tbody>
 
-        <tbody>
-          <tr data-status="recusado">
-            <td>Rogerio</td>
-            <td>Porsche 911</td>
-            <td>11/01/2023 às 12:00 - 11/01/2023 às 18:00</td>
-            <td>Lauro de Freitas</td>
-            <td>Aula</td>
-            <td>Media</td>
-            <td class="status">Recusado</td>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr data-status="recusado">
+              <td>Rogerio</td>
+              <td>Porsche 911</td>
+              <td>11/01/2023 às 12:00 - 11/01/2023 às 18:00</td>
+              <td>Lauro de Freitas</td>
+              <td>Aula</td>
+              <td>Media</td>
+              <td class="status">Recusado</td>
+              <td></td>
+            </tr>
 
-          <tr data-status="recusado">
-            <td>Caio Jovita</td>
-            <td>Toyota Corolla</td>
-            <td>08/01/2023 às 07:00 - 01/01/2023 às 12:00</td>
-            <td>Cimatech</td>
-            <td>Aula</td>
-            <td>Média</td>
-            <td class="status">Recusado</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+            <tr data-status="recusado">
+              <td>Caio Jovita</td>
+              <td>Toyota Corolla</td>
+              <td>08/01/2023 às 07:00 - 01/01/2023 às 12:00</td>
+              <td>Cimatech</td>
+              <td>Aula</td>
+              <td>Média</td>
+              <td class="status">Recusado</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </div>
 

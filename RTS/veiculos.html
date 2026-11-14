@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,17 +11,17 @@
 
   <header>
     <h1>RTS - Route Tech System</h1>
-    <nav>
+    <nav aria-label="Navegação principal">
       <a href="index.html">Sair</a>
     </nav>
   </header>
 
   <div class="container">
-    <nav class="menu">
+    <nav class="menu" aria-label="Menu do gestor">
       <ul>
         <li><a href="painel.html">Dashboard</a></li>
         <li><a href="reservas.html">Reservas</a></li>
-        <li class="atual"><a href="veiculos.html">Veiculos</a></li>
+        <li class="atual"><a href="veiculos.html" aria-current="page">Veículos</a></li>
         <li><a href="motoristas.html">Motoristas</a></li>
         <li><a href="manutencoes.html">Manutenções</a></li>
         <li><a href="relatorios.html">Relatórios</a></li>
@@ -29,59 +30,83 @@
     </nav>
 
     <main>
-      <h2>Veículos</h2>
-      <h4>Lista de Veículos</h4>
+      <section>
+        <h2>Veículos</h2>
+        <h3>Lista de Veículos</h3>
 
-      <div class="filtros">
-        <button data-filtro="todos" class="ativo">Todos</button>
-        <button id="pendencia" data-filtro="pendente">Pendente</button>
-        <button id="aprovacao" data-filtro="aprovado">Disponível</button>
-        <button id="recusados" data-filtro="recusado">Em uso</button>
-      </div>
+        <div class="filtros">
+          <button type="button" data-filtro="todos" class="ativo">Todos</button>
+          <button type="button" id="pendencia" data-filtro="pendente">Pendente</button>
+          <button type="button" id="aprovacao" data-filtro="aprovado">Disponível</button>
+          <button type="button" id="recusados" data-filtro="em-uso">Em uso</button>
+        </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Veículo</th>
-            <th>Placa</th>
-            <th>Tipo de combustível</th>
-            <th>Status</th>
-          </tr>
-        </thead>
+        <table id="veiculos-filtros">
+          <thead>
+            <tr>
+              <th scope="col">Veículo</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Tipo de combustível</th>
+              <th scope="col">Status</th>
+              <th scope="col">Motorista</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr data-status="pendente">
-            <td>Ford GT</td>
-            <td>ABC-1234</td>
-            <td>Gasolina</td>
-            <td class="status">Pendente</td>
-          </tr>
+          <tbody>
+            <tr data-status="pendente">
+              <td>Ford GT</td>
+              <td>ABC-1234</td>
+              <td>Gasolina</td>
+              <td class="status">Pendente</td>
+              <td>---</td>
+            </tr>
 
-          <tr data-status="pendente">
-            <td>Flashback</td>
-            <td>DEF-4567</td>
-            <td>Gasolina</td>
-            <td class="status">Pendente</td>
-          </tr>
-        </tbody>
+            <tr data-status="pendente">
+              <td>Flashback</td>
+              <td>DEF-4567</td>
+              <td>Gasolina</td>
+              <td class="status">Pendente</td>
+              <td>---</td>
+            </tr>
+          </tbody>
 
-        <tbody>
-          <tr data-status="aprovado">
-            <td>Porsche 911</td>
-            <td>HIJ-9999</td>
-            <td>Gasolina</td>
-            <td class="status">Disponível</td>
-          </tr>
+          <tbody>
+            <tr data-status="aprovado">
+              <td>Porsche 911</td>
+              <td>HIJ-9999</td>
+              <td>Gasolina</td>
+              <td class="status">Disponível</td>
+              <td>---</td>
+            </tr>
 
-          <tr data-status="aprovado">
-            <td>Toyota Corolla</td>
-            <td>KLM-0000</td>
-            <td>Gasolina</td>
-            <td class="status">Disponível</td>
-          </tr>
-        </tbody>
+            <tr data-status="aprovado">
+              <td>Toyota Corolla</td>
+              <td>KLM-0000</td>
+              <td>Gasolina</td>
+              <td class="status">Disponível</td>
+              <td>---</td>
+            </tr>
+          </tbody>
 
-      </table>
+          <tbody>
+            <tr data-status="em-uso">
+              <td>Fiat Argo</td>
+              <td>NOP-1111</td>
+              <td>Flex</td>
+              <td class="status">Em uso</td>
+              <td>Roberto</td>
+            </tr>
+
+            <tr data-status="em-uso">
+              <td>Volkswagen Gol</td>
+              <td>QRS-2222</td>
+              <td>Flex</td>
+              <td class="status">Em uso</td>
+              <td>Julia Ribeiro</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </div>
 

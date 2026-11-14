@@ -34,8 +34,15 @@
 
       <div class="filtros">
         <button data-filtro="todos" class="ativo">Todos</button>
-        <button id="aprovacao" data-filtro="aprovado">Ativo</button>
-        <button id="recusados" data-filtro="recusado">Inativo</button>
+        <button id="aprovacao" data-filtro="ativo">Ativo</button>
+        <button id="recusados" data-filtro="inativo">Inativo</button>
+      </div>
+
+      <div class="busca">
+         <input 
+         type="text" 
+         id="buscar-motorista" 
+         placeholder="Buscar por nome ou matrícula...">
       </div>
 
       <table>
@@ -52,57 +59,65 @@
         </thead>
 
         <tbody>
-          <tr data-status="aprovado">
+          <tr data-status="ativo">
             <td>Julia Ribeiro</td>
             <td>025.955258</td>
             <td>juliaribeiro@senai.com.br</td>
             <td>(71) 9 9999-9999</td>
             <td>AB</td>
-            <td class="status">Ativa</td>
+            <td class="status">Ativo</td>
             <td>
+              <div class="botoes-acao">
               <button class="aprovar">Ativar</button>
               <button class="recusar">Desativar</button>
+              </div>   
             </td>
           </tr>
 
-          <tr data-status="aprovado">
+          <tr data-status="ativo">
             <td>Roberto</td>
             <td>025.946178</td>
             <td>roberto@senai.com.br</td>
             <td>(71) 9 9999-8888</td>
             <td>AB</td>
-            <td class="status">Ativa</td>
+            <td class="status">Ativo</td>
             <td>
-              <button class="aprovar">Ativar</button>
-              <button class="recusar">Desativar</button>
+               <div class="botoes-acao">
+               <button class="aprovar">Ativar</button>
+               <button class="recusar">Desativar</button>
+               </div>   
             </td>
           </tr>
         </tbody>
 
         <tbody>
-          <tr data-status="aprovado">
+          <tr data-status="ativo">
             <td>Rogério</td>
             <td>018.656442</td>
             <td>rogerio@senai.com.br</td>
             <td>(71) 9 9999-5555</td>
             <td>AB</td>
-            <td class="status">Ativa</td>
+            <td class="status">Ativo</td>
             <td>
+              <div class="botoes-acao">
               <button class="aprovar">Ativar</button>
               <button class="recusar">Desativar</button>
+              </div>              
             </td>
           </tr>
 
-          <tr data-status="recusado">
+          <tr data-status="inativo">
             <td>Caio Jovita</td>
             <td>013.565546</td>
             <td>caiojovita@senai.com.br</td>
             <td>(71) 9 7777-9999</td>
             <td>B</td>
-            <td class="status">Inativa</td>
+            <td class="status">Inativo</td>
             <td>
+              <div class="botoes-acao">
               <button class="aprovar">Ativar</button>
               <button class="recusar">Desativar</button>
+              </div>   
             </td>
           </tr>
         </tbody>

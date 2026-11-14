@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTS - Route Tech System</title>
-  <link rel="stylesheet" href="painel.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS - Route Tech System</title>
+    <link rel="stylesheet" href="painel.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>RTS - Route Tech System</h1>
-    <nav>
-      <a href="index.html">Sair</a>
-    </nav>
-  </header>
+    <header>
+        <h1>RTS - Route Tech System</h1>
 
-  <div class="container">
-    <nav class="menu">
-      <ul>
-        <li class="atual"><a href="painel.html">Dashboard</a></li>
-        <li><a href="reservas.html">Reservas</a></li>
-        <li><a href="veiculos.html">Veiculos</a></li>
-        <li><a href="motoristas.html">Motoristas</a></li>
-        <li><a href="manutencoes.html">Manutenções</a></li>
-        <li><a href="relatorios.html">Relatórios</a></li>
-        <li><a href="notificacoes.html">Notificações</a></li>
-      </ul>
-    </nav>
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
 
-    <main>
-      <h2>Início</h2>
-    </main>
-  </div>
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li class="atual">
+                    <a href="painel.html" aria-current="page">Dashboard</a>
+                </li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="veiculos.html">Veículos</a></li>
+                <li><a href="motoristas.html">Motoristas</a></li>
+                <li><a href="manutencoes.html">Manutenções</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="notificacoes.html">Notificações</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section aria-labelledby="titulo-inicio">
+                <h2 id="titulo-inicio">Início</h2>
+            </section>
+        </main>
+
+    </div>
 
 </body>
 </html>

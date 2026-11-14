@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Manutenção</title>
     <link rel="stylesheet" href="painel.css">
 </head>
+
 <body>
+
     <header>
-    <h1>RTS - Route Tech System</h1>
-    <nav>
-      <a href="index.html">Sair</a>
-    </nav>
-  </header>
+        <h1>RTS - Route Tech System</h1>
 
-  <div class="container">
-    <nav class="menu">
-      <ul>
-        <li><a href="painel.html">Dashboard</a></li>
-        <li><a href="reservas.html">Reservas</a></li>
-        <li><a href="veiculos.html">Veiculos</a></li>
-        <li><a href="motoristas.html">Motoristas</a></li>
-        <li class="atual"><a href="manutencoes.html">Manutenções</a></li>
-        <li><a href="relatorios.html">Relatórios</a></li>
-        <li><a href="notificacoes.html">Notificações</a></li>
-      </ul>
-    </nav>
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
 
-    <main class="conteudo">
-        <h2 id="registrar-manu">Registrar Manutenção</h2>
+    <div class="container">
 
-        <form id="formulario-manutencao">
-            <label for="veiculo">Veículo:</label>
-            <input type="text" id="veiculo" placeholder="Ex: ABC-1234" name="veiculo" required> 
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="painel.html">Dashboard</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="veiculos.html">Veículos</a></li>
+                <li><a href="motoristas.html">Motoristas</a></li>
+                <li class="atual">
+                    <a href="manutencoes.html" aria-current="page">Manutenções</a>
+                </li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="notificacoes.html">Notificações</a></li>
+            </ul>
+        </nav>
 
-            <label for="tipo">Tipo de manutenção:</label>
-            <select id="tipo">
-                <option value="preventiva">Preventiva</option>
-                <option value="corretiva">Corretiva</option>
-            </select>
+        <main class="conteudo">
 
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data" required>
+            <section aria-labelledby="registrar-manu">
 
-            <label for="km">Quilometragem (Km):</label>
-            <input type="number" id="km" name="km"
-              placeholder="Ex: 50000" min="0" required>
+                <h2 id="registrar-manu">Registrar Manutenção</h2>
 
-            <label for="custo">Custo da manutenção:</label>
-            <input type="number" id="custo" name="custo"
-              placeholder="Ex: 350.00" min="0" step="0.01" required>
+                <form id="formulario-manutencao">
 
+                    <label for="veiculo">Veículo:</label>
+                    <input
+                        type="text"
+                        id="veiculo"
+                        name="veiculo"
+                        placeholder="Ex: ABC-1234"
+                        required>
 
+                    <label for="tipo">Tipo de manutenção:</label>
+                    <select id="tipo" name="tipo">
+                        <option value="preventiva">Preventiva</option>
+                        <option value="corretiva">Corretiva</option>
+                    </select>
 
-            <button type="submit">Salvar manutenção</button>
+                    <label for="data">Data:</label>
+                    <input
+                        type="date"
+                        id="data"
+                        name="data"
+                        required>
 
-        </form>
-    </main>
-<script src="script.js"></script>
+                    <label for="km">Quilometragem (Km):</label>
+                    <input
+                        type="number"
+                        id="km"
+                        name="km"
+                        placeholder="Ex: 50000"
+                        min="0"
+                        required>
+
+                    <label for="custo">Custo da manutenção:</label>
+                    <input
+                        type="number"
+                        id="custo"
+                        name="custo"
+                        placeholder="Ex: 350.00"
+                        min="0"
+                        step="0.01"
+                        required>
+
+                    <button type="submit">Salvar manutenção</button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

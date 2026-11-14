@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - RTS</title>
-  <link rel="stylesheet" href="cadastro.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - RTS</title>
+    <link href="cadastro.css" rel="stylesheet">
 </head>
+
 <body>
 
-  <header>
-    <h1></h1>
-    <a class="logo" href="index.html">LOGOTIPO</a>
-  </header>
+    <header>
+        <h1 class="logo">
+            <a href="index.html">LOGOTIPO</a>
+        </h1>
+    </header>
 
-  <main>
-    <section class="cadastro">
-      <form action="index.html">
-        <label>Nome da empresa
-          <input type="text" name="empresa" required>
-        </label>
+    <main>
+        <section class="cadastro" aria-label="Cadastro da empresa">
+            <form action="index.html">
 
-        <label>CNPJ
-          <input type="text" name="cnpj" required>
-        </label>
+                <label for="empresa">Nome da empresa</label>
+                <input id="empresa" name="empresa" type="text" required>
 
-        <label>E-mail
-          <input type="email" name="email" required>
-        </label>
+                <label for="cnpj">CNPJ</label>
+                <input id="cnpj" name="cnpj" type="text" required>
 
-        <label>Telefone
-          <input type="tel" name="telefone">
-        </label>
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required>
 
-        <label>Senha
-          <input type="password" name="senha" required>
-        </label>
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="tel">
 
-        <label>Confirmar senha
-          <input type="password" name="confirmar" required>
-        </label>
+                <label for="senha">Senha</label>
+                <input id="senha" name="senha" type="password" required>
 
-        <button type="submit">Cadastrar</button>
-      </form>
-    </section>
-  </main>
+                <label for="confirmar">Confirmar senha</label>
+                <input id="confirmar" name="confirmar" type="password" required>
+
+                <button type="submit">Cadastrar</button>
+
+            </form>
+        </section>
+    </main>
 
 </body>
 </html>

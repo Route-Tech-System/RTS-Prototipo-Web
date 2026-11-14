@@ -127,6 +127,17 @@ background: rgb(216, 168, 35);
     background: rgb(163, 26, 26);
 }
 
+.botoes-acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.botoes-acao button {
+    width: 95px;
+}
+
 /* ===== Manutenções ===== */
 
 #titulo-manutencao {
@@ -295,3 +306,17 @@ section h2 {
     background-color: #000;
     color: #fff;
 }
+
+#veiculos-filtros {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px;
+}
+
+
