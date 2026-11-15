@@ -1,7 +1,3 @@
-
-
-
-
 // =====================================================
 // FILTROS DE TABELAS (reservas, veículos e motoristas)
 // =====================================================
@@ -13,7 +9,6 @@
     if (!botoesFiltro.length || !tabela) return;
 
     const linhas = tabela.querySelectorAll("tbody tr[data-status]");
-
     if (!linhas.length) return;
 
     let filtroAtivo = "todos";
@@ -41,10 +36,10 @@
 })();
 
 
-
 // =====================================
 // FORMULÁRIO DE REGISTRO DE MANUTENÇÃO
 // =====================================
+
 (() => {
     const formulario = document.getElementById("formulario-manutencao");
 
@@ -135,14 +130,18 @@
     });
 })();
 
+
 // ==========================
 // ATIVAR/DESATIVAR MOTORISTAS
 // ==========================
+
 (() => {
     const campoBusca = document.getElementById("buscar-motorista");
+
     if (!campoBusca) return;
 
     const tabela = campoBusca.closest("main")?.querySelector("table");
+
     if (!tabela) return;
 
     tabela.querySelectorAll("tbody tr").forEach(linha => {
@@ -164,14 +163,18 @@
     });
 })();
 
+
 // ==========================
 // BUSCA DE MOTORISTAS
 // ==========================
+
 (() => {
     const campoBusca = document.getElementById("buscar-motorista");
+
     if (!campoBusca) return;
 
     const tabela = campoBusca.closest("main")?.querySelector("table");
+
     if (!tabela) return;
 
     campoBusca.addEventListener("input", () => {
@@ -180,16 +183,20 @@
         tabela.querySelectorAll("tbody tr").forEach(linha => {
             const nome = linha.cells[0]?.textContent.toLowerCase() || "";
             const matricula = linha.cells[1]?.textContent.toLowerCase() || "";
-            const encontrou = nome.includes(pesquisa) || matricula.includes(pesquisa);
+
+            const encontrou =
+                nome.includes(pesquisa) ||
+                matricula.includes(pesquisa);
+
             linha.style.display = encontrou ? "" : "none";
         });
     });
 })();
 
 
- // =================================
- // RELATÓRIOS: PERÍODO E DATAS
- // =================================
+// =================================
+// RELATÓRIOS: PERÍODO E DATAS
+// =================================
 
 (() => {
     const botao7Dias = document.getElementById("sete-dias");
@@ -200,8 +207,14 @@
     const dataInicial = document.getElementById("data-inicial");
     const dataFinal = document.getElementById("data-final");
 
-    if (!botao7Dias || !botao30Dias || !botao90Dias ||
-        !botaoPersonalizado || !dataInicial || !dataFinal) {
+    if (
+        !botao7Dias ||
+        !botao30Dias ||
+        !botao90Dias ||
+        !botaoPersonalizado ||
+        !dataInicial ||
+        !dataFinal
+    ) {
         return;
     }
 
@@ -220,20 +233,17 @@
         return `${ano}-${mes}-${dia}`;
     };
 
-    // Inicialmente, as datas ficam bloqueadas.
     dataInicial.disabled = true;
     dataFinal.disabled = true;
 
     botoesPeriodo.forEach(botao => {
         botao.addEventListener("click", () => {
-
             botoesPeriodo.forEach(item =>
                 item.classList.remove("ativo")
             );
 
             botao.classList.add("ativo");
 
-            // Só permite edição no período personalizado.
             if (botao === botaoPersonalizado) {
                 dataInicial.disabled = false;
                 dataFinal.disabled = false;
@@ -249,10 +259,8 @@
 
             if (botao === botao7Dias) {
                 dataInicio.setDate(hoje.getDate() - 7);
-
             } else if (botao === botao30Dias) {
                 dataInicio.setDate(hoje.getDate() - 30);
-
             } else if (botao === botao90Dias) {
                 dataInicio.setDate(hoje.getDate() - 90);
             }
@@ -267,6 +275,7 @@
 // =====================================
 // RELATÓRIOS: FILTROS DE UNIDADE/CONDUTOR
 // =====================================
+
 (() => {
     const filtroUnidade = document.getElementById("filtro-unidade");
     const filtroMotorista = document.getElementById("filtro-motorista");
@@ -275,7 +284,9 @@
     if (!filtroUnidade || !filtroMotorista || !botaoAplicar) return;
 
     botaoAplicar.addEventListener("click", () => {
-        const linhas = document.querySelectorAll(".conteudo table tbody tr[data-unidade]");
+        const linhas = document.querySelectorAll(
+            ".conteudo table tbody tr[data-unidade]"
+        );
 
         linhas.forEach(linha => {
             const combinaUnidade =
@@ -286,26 +297,35 @@
                 filtroMotorista.selectedIndex === 0 ||
                 linha.dataset.motorista === filtroMotorista.value;
 
-            linha.style.display = combinaUnidade && combinaMotorista ? "" : "none";
+            linha.style.display =
+                combinaUnidade && combinaMotorista ? "" : "none";
         });
 
         atualizarResumo();
     });
 })();
 
+
 // =============================
 // RELATÓRIOS: ATUALIZAR RESUMO
 // =============================
+
 function atualizarResumo() {
     const elementoKm = document.getElementById("total-km");
     const elementoAbastecimento = document.getElementById("total-abastecimento");
     const elementoManutencao = document.getElementById("total-manutencao");
     const elementoCusto = document.getElementById("custo-por-km");
 
-    if (!elementoKm || !elementoAbastecimento ||
-        !elementoManutencao || !elementoCusto) return;
+    if (
+        !elementoKm ||
+        !elementoAbastecimento ||
+        !elementoManutencao ||
+        !elementoCusto
+    ) return;
 
-    const linhas = document.querySelectorAll(".conteudo table tbody tr[data-unidade]");
+    const linhas = document.querySelectorAll(
+        ".conteudo table tbody tr[data-unidade]"
+    );
 
     let totalKm = 0;
     let totalAbastecimento = 0;
@@ -331,27 +351,33 @@ function atualizarResumo() {
         ? (totalAbastecimento + totalManutencao) / totalKm
         : 0;
 
-    elementoKm.textContent = totalKm.toLocaleString("pt-BR") + " km";
+    elementoKm.textContent =
+        totalKm.toLocaleString("pt-BR") + " km";
 
-    elementoAbastecimento.textContent = totalAbastecimento.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+    elementoAbastecimento.textContent =
+        totalAbastecimento.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
 
-    elementoManutencao.textContent = totalManutencao.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+    elementoManutencao.textContent =
+        totalManutencao.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
 
-    elementoCusto.textContent = custoPorKm.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+    elementoCusto.textContent =
+        custoPorKm.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
 }
+
 
 // =================================
 // RELATÓRIOS: LIMPAR FILTROS
 // =================================
+
 (() => {
     const filtroUnidade = document.getElementById("filtro-unidade");
     const filtroMotorista = document.getElementById("filtro-motorista");
@@ -363,7 +389,9 @@ function atualizarResumo() {
         filtroUnidade.selectedIndex = 0;
         filtroMotorista.selectedIndex = 0;
 
-        document.querySelectorAll(".conteudo table tbody tr[data-unidade]").forEach(linha => {
+        document.querySelectorAll(
+            ".conteudo table tbody tr[data-unidade]"
+        ).forEach(linha => {
             linha.style.display = "";
         });
 
@@ -371,12 +399,24 @@ function atualizarResumo() {
     });
 })();
 
+
+// Atualiza os indicadores na página de relatórios.
+atualizarResumo();
+
+
 // =============================
 // FUNCIONALIDADES DE NOTIFICAÇÕES
 // =============================
+
 (() => {
-    const alertas = document.querySelectorAll(".lista-alertas .alerta[data-status]");
-    const botoesFiltro = document.querySelectorAll(".filtros button[data-filtro]");
+    const alertas = document.querySelectorAll(
+        ".lista-alertas .alerta[data-status]"
+    );
+
+    const botoesFiltro = document.querySelectorAll(
+        ".filtros button[data-filtro]"
+    );
+
     const botaoMarcarTodas = document.getElementById("marcar-todas");
 
     if (!alertas.length || !botaoMarcarTodas) return;
@@ -408,14 +448,18 @@ function atualizarResumo() {
     function filtrarAlertas(filtro) {
         alertas.forEach(alerta => {
             alerta.style.display =
-                filtro === "todos" || alerta.dataset.status === filtro ? "" : "none";
+                filtro === "todos" || alerta.dataset.status === filtro
+                    ? ""
+                    : "none";
         });
     }
 
     botoesFiltro.forEach(botao => {
         botao.addEventListener("click", () => {
             botoesFiltro.forEach(item => item.classList.remove("ativo"));
+
             botao.classList.add("ativo");
+
             filtrarAlertas(botao.dataset.filtro);
         });
     });
@@ -425,6 +469,7 @@ function atualizarResumo() {
             alerta.dataset.status = "lida";
 
             const textoStatus = alerta.querySelector(".texto-status");
+
             if (textoStatus) textoStatus.textContent = "Lida";
         });
 
@@ -444,18 +489,26 @@ function atualizarResumo() {
     atualizarResumoNotificacoes();
 })();
 
+
 // ==================================
 // CADASTRO: GESTOR / MOTORISTA
 // ==================================
+
 (() => {
-    const botoes = document.querySelectorAll(".tipos-cadastro button[data-tipo]");
+    const botoes = document.querySelectorAll(
+        ".tipos-cadastro button[data-tipo]"
+    );
+
     const grupos = document.querySelectorAll(".campos[data-tipo]");
 
     if (!botoes.length || !grupos.length) return;
 
     function mostrarTipo(tipo) {
         botoes.forEach(botao => {
-            botao.classList.toggle("ativo", botao.dataset.tipo === tipo);
+            botao.classList.toggle(
+                "ativo",
+                botao.dataset.tipo === tipo
+            );
         });
 
         grupos.forEach(grupo => {
@@ -475,64 +528,31 @@ function atualizarResumo() {
     mostrarTipo("gestor");
 })();
 
-// Atualiza os indicadores na página de relatórios.
-atualizarResumo();
-
-//======================================
-//ARMAZENAR REGISTRO DE MANUTENÇÃO NO LOCAL STORAGE
-//======================================
-(() => {
-    const formulario = document.getElementById("formulario-manutencao");
-    if (!formulario) return;
-    
-    formulario.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const registro = {
-            veiculo: document.getElementById("veiculo").value,
-            tipo: document.getElementById("tipo").value,
-            data: document.getElementById("data").value,
-            km: document.getElementById("km").value,
-            custo: document.getElementById("custo").value
-        };
-
-        let registros = JSON.parse(localStorage.getItem("registrosManutencao")) || [];
-        registros.push(registro);
-        localStorage.setItem("registrosManutencao", JSON.stringify(registros));
-
-        alert("Registro de manutenção armazenado com sucesso!");
-        formulario.reset();
-    });
-})();
-
 
 // =====================================
 // EXIBIR MANUTENÇÕES REGISTRADAS
 // =====================================
+
 (() => {
     const lista = document.getElementById("lista-manutencoes");
 
-    // Só executa na página que possui a lista
     if (!lista) return;
 
     const campoBusca = document.getElementById("buscar-manutencao");
 
-    // Recupera os registros salvos
     const registros = JSON.parse(
         localStorage.getItem("registrosManutencao")
     ) || [];
 
-    // Formata a data para o padrão brasileiro
     function formatarData(data) {
         if (!data) return "Não informada";
 
         const partes = data.split("-");
+
         return `${partes[2]}/${partes[1]}/${partes[0]}`;
     }
 
-    // Cria os cards na tela
     function renderizarRegistros(registrosFiltrados) {
-
         if (registrosFiltrados.length === 0) {
             lista.innerHTML = "<p>Nenhuma manutenção encontrada.</p>";
             return;
@@ -555,13 +575,10 @@ atualizarResumo();
         ).join("");
     }
 
-    // Exibe todos os registros inicialmente
     renderizarRegistros(registros);
 
-    // Pesquisa por veículo ou tipo de manutenção
     if (campoBusca) {
         campoBusca.addEventListener("input", () => {
-
             const termo = campoBusca.value.toLowerCase().trim();
 
             const registrosFiltrados = registros.filter(
