@@ -16,32 +16,96 @@
     </header>
 
     <main>
-        <section class="cadastro" aria-label="Cadastro da empresa">
+        <section class="cadastro" aria-label="Cadastro">
+
+            <div class="tipos-cadastro">
+                <button type="button" class="botao ativo" data-tipo="gestor">Cadastrar-se como gestor</button>
+                <button type="button" class="botao" data-tipo="motorista">Cadastrar-se como motorista</button>
+            </div>
+
             <form action="index.html">
 
-                <label for="empresa">Nome da empresa</label>
-                <input id="empresa" name="empresa" type="text" required>
+                <!-- CAMPOS DO GESTOR -->
+                <fieldset class="campos" data-tipo="gestor">
 
-                <label for="cnpj">CNPJ</label>
-                <input id="cnpj" name="cnpj" type="text" required>
+                    <label for="gestor-empresa">Nome da empresa</label>
+                    <input id="gestor-empresa" name="empresa" type="text" required>
 
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" required>
+                    <label for="gestor-cnpj">CNPJ</label>
+                    <input id="gestor-cnpj" name="cnpj" type="text" required>
 
-                <label for="telefone">Telefone</label>
-                <input id="telefone" name="telefone" type="tel">
+                    <label for="gestor-email">E-mail</label>
+                    <input id="gestor-email" name="email" type="email" required>
 
-                <label for="senha">Senha</label>
-                <input id="senha" name="senha" type="password" required>
+                    <label for="gestor-telefone">Telefone</label>
+                    <input id="gestor-telefone" name="telefone" type="tel">
 
-                <label for="confirmar">Confirmar senha</label>
-                <input id="confirmar" name="confirmar" type="password" required>
+                    <label for="gestor-senha">Senha</label>
+                    <input id="gestor-senha" name="senha" type="password" required>
+
+                    <label for="gestor-confirmar">Confirmar senha</label>
+                    <input id="gestor-confirmar" name="confirmar" type="password" required>
+
+                </fieldset>
+
+                <!-- CAMPOS DO MOTORISTA -->
+                <fieldset class="campos" data-tipo="motorista" hidden disabled>
+
+                    <label for="motorista-nome">Nome completo</label>
+                    <input id="motorista-nome" name="nome" type="text" required>
+
+                    <label for="motorista-matricula">Matrícula / RA</label>
+                    <input id="motorista-matricula" name="matricula" type="text" required>
+
+                    <label for="motorista-email">E-mail institucional</label>
+                    <input id="motorista-email" name="email" type="email" required>
+
+                    <label for="motorista-telefone">Telefone</label>
+                    <input id="motorista-telefone" name="telefone" type="tel" required>
+
+                    <label for="motorista-unidade">Unidade</label>
+                    <select id="motorista-unidade" name="unidade" required>
+                        <option value="">Selecione</option>
+                        <option>Camaçari</option>
+                        <option>Lauro de Freitas</option>
+                    </select>
+
+                    <label for="motorista-tipo">Tipo de usuário</label>
+                    <select id="motorista-tipo" name="tipo-usuario" required>
+                        <option>Motorista comum</option>
+                        <option>Instrutor</option>
+                        <option>Terceirizado</option>
+                    </select>
+
+                    <label for="motorista-cnh">Categoria da CNH</label>
+                    <select id="motorista-cnh" name="categoria-cnh" required>
+                        <option value="">Selecione</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>AB</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                    </select>
+
+                    <label for="motorista-validade">Validade da CNH</label>
+                    <input id="motorista-validade" name="validade-cnh" type="date" required>
+
+                    <label for="motorista-senha">Senha</label>
+                    <input id="motorista-senha" name="senha" type="password" required>
+
+                    <label for="motorista-confirmar">Confirmar senha</label>
+                    <input id="motorista-confirmar" name="confirmar" type="password" required>
+
+                </fieldset>
 
                 <button type="submit">Cadastrar</button>
 
             </form>
         </section>
     </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

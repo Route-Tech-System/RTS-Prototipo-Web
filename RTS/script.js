@@ -437,5 +437,36 @@ function atualizarResumo() {
     atualizarResumoNotificacoes();
 })();
 
+// ==================================
+// CADASTRO: GESTOR / MOTORISTA
+// ==================================
+(() => {
+    const botoes = document.querySelectorAll(".tipos-cadastro button[data-tipo]");
+    const grupos = document.querySelectorAll(".campos[data-tipo]");
+
+    if (!botoes.length || !grupos.length) return;
+
+    function mostrarTipo(tipo) {
+        botoes.forEach(botao => {
+            botao.classList.toggle("ativo", botao.dataset.tipo === tipo);
+        });
+
+        grupos.forEach(grupo => {
+            const ativo = grupo.dataset.tipo === tipo;
+
+            grupo.hidden = !ativo;
+            grupo.disabled = !ativo;
+        });
+    }
+
+    botoes.forEach(botao => {
+        botao.addEventListener("click", () => {
+            mostrarTipo(botao.dataset.tipo);
+        });
+    });
+
+    mostrarTipo("gestor");
+})();
+
 // Atualiza os indicadores na página de relatórios.
 atualizarResumo();
