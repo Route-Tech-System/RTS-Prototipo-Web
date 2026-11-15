@@ -67,7 +67,8 @@ label {
     font-weight: bold;
 }
 
-input {
+input,
+select {
     border: 2px solid #000;
     padding: 10px;
     font-size: 16px;
@@ -85,4 +86,44 @@ button {
 button:hover {
     background-color: #000;
     color: #fff;
+}
+
+
+/* Botões de tipo de cadastro (mesmo estilo dos botões da página inicial) */
+.tipos-cadastro {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.botao {
+    grid-column: auto;
+    flex: 1;
+    border: 2px solid black;
+    padding: 12px 40px;
+    background-color: #fff;
+    color: black;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.botao:hover,
+.botao.ativo {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Grupo de campos de cada tipo de cadastro */
+.campos {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    min-width: 0;
+    border: 0;
+}
+
+.campos[hidden] {
+    display: none;
 }

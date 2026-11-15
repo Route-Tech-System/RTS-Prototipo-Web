@@ -320,3 +320,68 @@ th, td {
 }
 
 
+/* Alinhamento dos avisos nas notificações */
+.lista-notificacoes .alerta {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
+    align-items: center;
+    gap: 24px;
+}
+
+.lista-notificacoes .info-veiculo {
+    min-width: 0;
+}
+
+.lista-notificacoes .situacao {
+    min-width: 0;
+}
+
+.lista-notificacoes .alerta form {
+    margin: 0;
+}
+
+.lista-notificacoes .alerta button {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/* Filtros da página de relatórios */
+.filtros-detalhados {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filtros-detalhados label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 140px;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.filtros-detalhados input,
+.filtros-detalhados select {
+    width: 100%;
+    height: 36px;
+    padding: 6px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.filtros-detalhados button {
+    height: 36px;
+    min-width: 90px;
+    padding: 8px 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .filtros-detalhados label {
+        flex-basis: 100%;
+    }
+}
+
