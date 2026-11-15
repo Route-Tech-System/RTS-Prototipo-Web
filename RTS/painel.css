@@ -385,3 +385,245 @@ th, td {
     }
 }
 
+/* Alinhamento dos avisos nas notificações */
+.lista-notificacoes .alerta {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
+    align-items: center;
+    gap: 24px;
+}
+
+.lista-notificacoes .info-veiculo {
+    min-width: 0;
+}
+
+.lista-notificacoes .situacao {
+    min-width: 0;
+}
+
+.lista-notificacoes .alerta form {
+    margin: 0;
+}
+
+.lista-notificacoes .alerta button {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/* Filtros da página de relatórios */
+.filtros-detalhados {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filtros-detalhados label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 140px;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.filtros-detalhados input,
+.filtros-detalhados select {
+    width: 100%;
+    height: 36px;
+    padding: 6px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.filtros-detalhados button {
+    height: 36px;
+    min-width: 90px;
+    padding: 8px 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .filtros-detalhados label {
+        flex-basis: 100%;
+    }
+}
+
+/* Alinhamento dos avisos nas notificações */
+.lista-alertas .alerta {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
+    align-items: center;
+    gap: 24px;
+}
+
+.lista-alertas .info-veiculo {
+    min-width: 0;
+}
+
+.lista-alertas .situacao {
+    min-width: 0;
+}
+
+.lista-alertas .alerta form {
+    margin: 0;
+}
+
+.lista-alertas .alerta button {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/* Filtros da página de relatórios */
+.filtros-detalhados {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filtros-detalhados label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 140px;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.filtros-detalhados input,
+.filtros-detalhados select {
+    width: 100%;
+    height: 36px;
+    padding: 6px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.filtros-detalhados button {
+    height: 36px;
+    min-width: 90px;
+    padding: 8px 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .filtros-detalhados label {
+        flex-basis: 100%;
+    }
+}
+  /* personalizando os cards de manutenção */
+.card-manutencao {
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-left: 5px solid #383838;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-manutencao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+.card-manutencao h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.card-manutencao p {
+    font-size: 14px;
+    margin: 9px 0;
+    color: #444;
+}
+
+.card-manutencao strong {
+    color: #222;
+}
+
+.lista-veiculos {
+    gap: 20px;
+}
+/* estilizando a barra de busca - manutenções */
+.busca-manutencoes {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+#buscar-manutencao {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#buscar-manutencao:focus {
+    border-color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+}
+
+.busca-manutencoes::before {
+    content: "⌕";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #777;
+    pointer-events: none;
+}
+
+#buscar-manutencao::placeholder {
+    color: #888;
+}
+
+.busca {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+#buscar-motorista {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#buscar-motorista:focus {
+    border-color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+}
+
+.busca::before {
+    content: "⌕";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #777;
+    pointer-events: none;
+}
+
+#buscar-motorista::placeholder {
+    color: #888;
+}

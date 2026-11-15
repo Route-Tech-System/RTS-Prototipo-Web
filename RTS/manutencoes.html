@@ -122,50 +122,26 @@
 </section>
 
 
-      <section class="historico">
-    <h2>Histórico de manutenção</h2>
+      
+<section class="historico">
+    <h2>Manutenções registradas</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Veículo</th>
-                <th>Placa</th>
-                <th>Tipo</th>
-                <th>Data</th>
-                <th>Custo</th>
-            </tr>
-        </thead>
+    <div class="busca-manutencoes">
+        <input
+            type="text"
+            id="buscar-manutencao"
+            placeholder="Buscar por veículo ou tipo de manutenção..."
+        >
+    </div>
 
-        <tbody>
-            <tr>
-                <td>Fiat Argo</td>
-                <td>GHI-9012</td>
-                <td>Preventiva</td>
-                <td>10/10/2026</td>
-                <td>R$ 350,00</td>
-            </tr>
-
-            <tr>
-                <td>Volkswagen Gol</td>
-                <td>JKL-3456</td>
-                <td>Corretiva</td>
-                <td>15/10/2026</td>
-                <td>R$ 580,00</td>
-            </tr>
-
-            <tr>
-                <td>Chevrolet Onix</td>
-                <td>DEF-5678</td>
-                <td>Preventiva</td>
-                <td>20/10/2026</td>
-                <td>R$ 420,00</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="lista-manutencoes" class="lista-veiculos">
+        // Os cards serão criados pelo JavaScript 
+    </div>
 </section>
+
 
     
   </main>
-  
+  <script src="script.js"></script>
 </body>
 </html>

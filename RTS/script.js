@@ -41,35 +41,42 @@
 })();
 
 
+
 // =====================================
 // FORMULÁRIO DE REGISTRO DE MANUTENÇÃO
 // =====================================
 (() => {
     const formulario = document.getElementById("formulario-manutencao");
-    if (!formulario) return;
 
-    const campoVeiculo = document.getElementById("veiculo");
-    const campoTipo = document.getElementById("tipo");
-    const campoData = document.getElementById("data");
-    const campoKm = document.getElementById("km");
-    const campoCusto = document.getElementById("custo");
+    if (!formulario) return;
 
     formulario.addEventListener("submit", event => {
         event.preventDefault();
 
-        alert(
-            "Registro de manutenção feito com sucesso!\n\n" +
-            "Veículo: " + campoVeiculo.value + "\n" +
-            "Tipo: " + campoTipo.value + "\n" +
-            "Data: " + campoData.value + "\n" +
-            "Quilometragem: " + campoKm.value + " km\n" +
-            "Custo: " + Number(campoCusto.value).toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL"
-            })
+        const registro = {
+            veiculo: document.getElementById("veiculo").value.trim(),
+            tipo: document.getElementById("tipo").value,
+            data: document.getElementById("data").value,
+            km: document.getElementById("km").value,
+            custo: document.getElementById("custo").value
+        };
+
+        const registros = JSON.parse(
+            localStorage.getItem("registrosManutencao")
+        ) || [];
+
+        registros.push(registro);
+
+        localStorage.setItem(
+            "registrosManutencao",
+            JSON.stringify(registros)
         );
 
+        alert("Manutenção registrada com sucesso!");
+
         formulario.reset();
+
+        window.location.href = "manutencoes.html";
     });
 })();
 
@@ -470,3 +477,100 @@ function atualizarResumo() {
 
 // Atualiza os indicadores na página de relatórios.
 atualizarResumo();
+
+//======================================
+//ARMAZENAR REGISTRO DE MANUTENÇÃO NO LOCAL STORAGE
+//======================================
+(() => {
+    const formulario = document.getElementById("formulario-manutencao");
+    if (!formulario) return;
+    
+    formulario.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const registro = {
+            veiculo: document.getElementById("veiculo").value,
+            tipo: document.getElementById("tipo").value,
+            data: document.getElementById("data").value,
+            km: document.getElementById("km").value,
+            custo: document.getElementById("custo").value
+        };
+
+        let registros = JSON.parse(localStorage.getItem("registrosManutencao")) || [];
+        registros.push(registro);
+        localStorage.setItem("registrosManutencao", JSON.stringify(registros));
+
+        alert("Registro de manutenção armazenado com sucesso!");
+        formulario.reset();
+    });
+})();
+
+
+// =====================================
+// EXIBIR MANUTENÇÕES REGISTRADAS
+// =====================================
+(() => {
+    const lista = document.getElementById("lista-manutencoes");
+
+    // Só executa na página que possui a lista
+    if (!lista) return;
+
+    const campoBusca = document.getElementById("buscar-manutencao");
+
+    // Recupera os registros salvos
+    const registros = JSON.parse(
+        localStorage.getItem("registrosManutencao")
+    ) || [];
+
+    // Formata a data para o padrão brasileiro
+    function formatarData(data) {
+        if (!data) return "Não informada";
+
+        const partes = data.split("-");
+        return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    }
+
+    // Cria os cards na tela
+    function renderizarRegistros(registrosFiltrados) {
+
+        if (registrosFiltrados.length === 0) {
+            lista.innerHTML = "<p>Nenhuma manutenção encontrada.</p>";
+            return;
+        }
+
+        lista.innerHTML = registrosFiltrados.map(
+            ({ veiculo, tipo, data, km, custo }) => `
+                <article class="veiculo card-manutencao">
+                    <h3>${veiculo}</h3>
+
+                    <p><strong>Tipo:</strong> ${tipo}</p>
+
+                    <p><strong>Data:</strong> ${formatarData(data)}</p>
+
+                    <p><strong>Quilometragem:</strong> ${km} km</p>
+
+                    <p><strong>Custo:</strong> R$ ${Number(custo).toFixed(2)}</p>
+                </article>
+            `
+        ).join("");
+    }
+
+    // Exibe todos os registros inicialmente
+    renderizarRegistros(registros);
+
+    // Pesquisa por veículo ou tipo de manutenção
+    if (campoBusca) {
+        campoBusca.addEventListener("input", () => {
+
+            const termo = campoBusca.value.toLowerCase().trim();
+
+            const registrosFiltrados = registros.filter(
+                ({ veiculo, tipo }) =>
+                    veiculo.toLowerCase().includes(termo) ||
+                    tipo.toLowerCase().includes(termo)
+            );
+
+            renderizarRegistros(registrosFiltrados);
+        });
+    }
+})();
