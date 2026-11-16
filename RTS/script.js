@@ -591,3 +591,29 @@ atualizarResumo();
         });
     }
 })();
+
+// =====================================
+// MOSTRAR FORM NOS CARDS DE CHECKLIST DE MOTORISTA
+// =====================================
+
+    const btnRetirada = document.getElementById("btn-retirada");
+    const btnDevolucao = document.getElementById("btn-devolucao");
+
+    const formularioRetirada = document.getElementById("form-retirada");
+    const formularioDevolucao = document.getElementById("form-devolucao");
+
+    // Abrir Checklist de Retirada
+    btnRetirada.addEventListener("click", () => {
+        formularioRetirada.hidden = false;
+        formularioDevolucao.hidden = true;
+    });
+
+    // Abrir Checklist de Devolução
+    btnDevolucao.addEventListener("click", () => {
+        formularioDevolucao.hidden = false;
+        formularioRetirada.hidden = true;
+    });
+
+
+
+    
