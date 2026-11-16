@@ -385,135 +385,7 @@ th, td {
     }
 }
 
-/* Alinhamento dos avisos nas notificações */
-.lista-notificacoes .alerta {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
-    align-items: center;
-    gap: 24px;
-}
 
-.lista-notificacoes .info-veiculo {
-    min-width: 0;
-}
-
-.lista-notificacoes .situacao {
-    min-width: 0;
-}
-
-.lista-notificacoes .alerta form {
-    margin: 0;
-}
-
-.lista-notificacoes .alerta button {
-    width: 100%;
-    white-space: nowrap;
-}
-
-
-/* Filtros da página de relatórios */
-.filtros-detalhados {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.filtros-detalhados label {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1 1 140px;
-    min-width: 120px;
-    font-weight: bold;
-}
-
-.filtros-detalhados input,
-.filtros-detalhados select {
-    width: 100%;
-    height: 36px;
-    padding: 6px;
-    border: 1px solid #999;
-    font-size: 14px;
-}
-
-.filtros-detalhados button {
-    height: 36px;
-    min-width: 90px;
-    padding: 8px 14px;
-    white-space: nowrap;
-}
-
-@media (max-width: 650px) {
-    .filtros-detalhados label {
-        flex-basis: 100%;
-    }
-}
-
-/* Alinhamento dos avisos nas notificações */
-.lista-alertas .alerta {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
-    align-items: center;
-    gap: 24px;
-}
-
-.lista-alertas .info-veiculo {
-    min-width: 0;
-}
-
-.lista-alertas .situacao {
-    min-width: 0;
-}
-
-.lista-alertas .alerta form {
-    margin: 0;
-}
-
-.lista-alertas .alerta button {
-    width: 100%;
-    white-space: nowrap;
-}
-
-
-/* Filtros da página de relatórios */
-.filtros-detalhados {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.filtros-detalhados label {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1 1 140px;
-    min-width: 120px;
-    font-weight: bold;
-}
-
-.filtros-detalhados input,
-.filtros-detalhados select {
-    width: 100%;
-    height: 36px;
-    padding: 6px;
-    border: 1px solid #999;
-    font-size: 14px;
-}
-
-.filtros-detalhados button {
-    height: 36px;
-    min-width: 90px;
-    padding: 8px 14px;
-    white-space: nowrap;
-}
-
-@media (max-width: 650px) {
-    .filtros-detalhados label {
-        flex-basis: 100%;
-    }
-}
   /* personalizando os cards de manutenção */
 .card-manutencao {
     background-color: #fff;
@@ -626,4 +498,285 @@ th, td {
 
 #buscar-motorista::placeholder {
     color: #888;
+}
+
+/* perfil do motorista*/
+.perfil-motorista {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "titulo titulo"
+        "informacoes foto";
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+}
+
+.perfil-motorista h2 {
+    grid-area: titulo;
+    margin: 0;
+}
+
+.informacoes {
+    grid-area: informacoes;
+}
+
+.foto-perfil {
+    grid-area: foto;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #555;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.botoes-checklist {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.botoes-checklist button {
+    width: 260px;
+    height: 160px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    background-color: #383838;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botoes-checklist button:hover {
+    background-color: #505050;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.botoes-checklist button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.icone-checklist {
+    font-size: 35px;
+}
+
+.botoes-checklist small {
+    font-size: 13px;
+    font-weight: normal;
+    color: #ddd;
+}
+
+/* FORMULÁRIOS DA CHECKLIST */
+
+#form-retirada,
+#form-devolucao {
+    width: 100%;
+    max-width: 650px;
+    padding: 24px;
+    margin: 25px auto;
+
+    background-color: #fff;
+    border: 2px solid #000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-retirada h2,
+#form-devolucao h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#form-retirada h3,
+#form-devolucao h3 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+#form-retirada label,
+#form-devolucao label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#form-retirada input,
+#form-retirada select,
+#form-retirada textarea,
+#form-devolucao input,
+#form-devolucao select,
+#form-devolucao textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #000;
+    font-size: 16px;
+}
+
+#form-retirada textarea,
+#form-devolucao textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#form-retirada button,
+#form-devolucao button {
+    padding: 12px 24px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#form-retirada button:hover,
+#form-devolucao button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#form-retirada[hidden],
+#form-devolucao[hidden] {
+    display: none;
+}
+
+
+/* ======================================
+   HISTÓRICO DE VIAGENS
+====================================== */
+
+.historico-viagens {
+    background-color: #626161;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.historico-viagens h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.historico-viagens table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.historico-viagens th,
+.historico-viagens td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.historico-viagens th {
+    background-color: #292929;
+    color: #f3ebd8;
+}
+
+.historico-viagens tbody tr:hover {
+    background-color: #454545;
+}
+
+
+/* ======================================
+   PERFIL DO MOTORISTA
+====================================== */
+
+.perfil-motorista {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    grid-template-areas:
+        "titulo foto"
+        "info foto";
+    align-items: center;
+    gap: 15px;
+    background-color: #626161;
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.perfil-motorista h2 {
+    grid-area: titulo;
+    color: #f3ebd8;
+    margin: 0;
+}
+
+.perfil-motorista .informacoes {
+    grid-area: info;
+    line-height: 1.8;
+}
+
+.perfil-motorista .foto-perfil {
+    grid-area: foto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-motorista .foto-perfil img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f3efe7;
+}
+
+/* ======================================
+   SITUAÇÃO DA CNH
+====================================== */
+
+.status-cnh {
+    background-color: #626161;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.status-cnh h2 {
+    color: #f3ebd8;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.informacoes-cnh {
+    line-height: 1.8;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .perfil-motorista {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "foto"
+            "titulo"
+            "info";
+    }
+
+    .perfil-motorista .foto-perfil {
+        justify-content: flex-start;
+    }
 }
