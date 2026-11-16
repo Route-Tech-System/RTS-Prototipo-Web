@@ -32,8 +32,114 @@
             </ul>
         </nav>
 
-        <main>
-            
+        <main class="conteudo">
+
+            <section aria-labelledby="nova-solicitacao">
+
+                <h2 id="nova-solicitacao">Nova solicitação</h2>
+
+                <form id="formulario-agendamento">
+
+                    <label for="veiculo">Veículo:</label>
+                    <select id="veiculo" name="veiculo" required>
+                        <option value="">Selecione um veículo</option>
+                        <option value="porsche-911">Porsche 911 (HIJ-9999)</option>
+                        <option value="toyota-corolla">Toyota Corolla (KLM-0000)</option>
+                        <option value="fiat-argo">Fiat Argo (NOP-1111)</option>
+                        <option value="volkswagen-gol">Volkswagen Gol (QRS-2222)</option>
+                    </select>
+
+                    <label for="saida">Saída:</label>
+                    <input type="datetime-local" id="saida" name="saida" required>
+
+                    <label for="retorno">Retorno:</label>
+                    <input type="datetime-local" id="retorno" name="retorno" required>
+
+                    <label for="finalidade">Finalidade:</label>
+                    <input
+                        type="text"
+                        id="finalidade"
+                        name="finalidade"
+                        placeholder="Ex: Reunião"
+                        maxlength="200"
+                        required>
+
+                    <label for="destino">Destino:</label>
+                    <input
+                        type="text"
+                        id="destino"
+                        name="destino"
+                        placeholder="Ex: Lauro de Freitas"
+                        maxlength="200"
+                        required>
+
+                    <label for="prioridade">Prioridade:</label>
+                    <select id="prioridade" name="prioridade">
+                        <option value="normal">Normal</option>
+                        <option value="alta">Alta</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+
+                    <button type="submit">Enviar solicitação</button>
+
+                </form>
+
+            </section>
+
+            <section>
+                <h2>Minhas reservas</h2>
+
+                <table id="veiculos-filtros">
+                    <thead>
+                        <tr>
+                            <th scope="col">Veículo</th>
+                            <th scope="col">Período</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Finalidade</th>
+                            <th scope="col">Prioridade</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Ford GT</td>
+                            <td>01/01/2023 às 12:00 - 01/01/2023 às 18:00</td>
+                            <td>Lauro de Freitas</td>
+                            <td>Reunião</td>
+                            <td>Alta</td>
+                            <td class="status">Pendente</td>
+                            <td>
+                                <div class="botoes-acao">
+                                    <button type="button" class="recusar">Cancelar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Toyota Corolla</td>
+                            <td>15/01/2023 às 08:00 - 15/01/2023 às 12:00</td>
+                            <td>Cimatech</td>
+                            <td>Aula</td>
+                            <td>Normal</td>
+                            <td class="status">Aprovada</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Toyota Corolla</td>
+                            <td>18/12/2022 às 09:00 - 18/12/2022 às 12:00</td>
+                            <td>Cimatech</td>
+                            <td>Aula</td>
+                            <td>Alta</td>
+                            <td class="status">Recusada</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
         </main>
 
     </div>

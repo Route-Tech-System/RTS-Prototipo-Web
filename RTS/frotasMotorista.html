@@ -32,8 +32,91 @@
             </ul>
         </nav>
 
-        <main>
-            
+        <main class="conteudo">
+
+            <section aria-labelledby="titulo-frotas">
+
+                <h2 id="titulo-frotas">Consulta de Frotas</h2>
+                <h4>Veículos disponíveis para o período informado</h4>
+
+                <div class="filtros filtros-detalhados">
+
+                    <label for="frota-data">Data:
+                        <input type="date" id="frota-data">
+                    </label>
+
+                    <label for="frota-saida">Saída:
+                        <input type="time" id="frota-saida">
+                    </label>
+
+                    <label for="frota-retorno">Retorno:
+                        <input type="time" id="frota-retorno">
+                    </label>
+
+                    <button type="submit">Buscar</button>
+                </div>
+
+                <table id="veiculos-filtros">
+                    <thead>
+                        <tr>
+                            <th scope="col">Veículo</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Tipo de combustível</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Porsche 911</td>
+                            <td>HIJ-9999</td>
+                            <td>Gasolina</td>
+                            <td class="status">Disponível</td>
+                            <td>
+                                <form action="agendamentoMotorista.html">
+                                    <div class="botoes-acao">
+                                        <button type="submit">Solicitar</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Toyota Corolla</td>
+                            <td>KLM-0000</td>
+                            <td>Gasolina</td>
+                            <td class="status">Disponível</td>
+                            <td>
+                                <form action="agendamentoMotorista.html">
+                                    <div class="botoes-acao">
+                                        <button type="submit">Solicitar</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fiat Argo</td>
+                            <td>NOP-1111</td>
+                            <td>Flex</td>
+                            <td class="status">Em uso até 17:00</td>
+                            <td>
+                                ---
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Volkswagen Gol</td>
+                            <td>QRS-2222</td>
+                            <td>Flex</td>
+                            <td class="status">Em uso até 11:00</td>
+                            <td>
+                                ---
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
         </main>
 
     </div>

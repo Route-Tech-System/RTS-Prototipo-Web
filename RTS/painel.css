@@ -265,11 +265,13 @@ section h2 {
     margin-top: 5px;
 }
 
-#registrar-manu {
+#registrar-manu,
+#nova-solicitacao {
     margin-bottom: 24px;
 }
 
-#formulario-manutencao {
+#formulario-manutencao,
+#formulario-agendamento {
     width: 100%;
     max-width: 500px;
     padding: 24px;
@@ -283,13 +285,16 @@ section h2 {
     gap: 6px;
 }
 
-#formulario-manutencao label {
+#formulario-manutencao label,
+#formulario-agendamento label {
     font-weight: bold;
     text-align: left;
 }
 
 #formulario-manutencao input,
-#formulario-manutencao select {
+#formulario-manutencao select,
+#formulario-agendamento input,
+#formulario-agendamento select {
     width: 100%;
     padding: 10px;
     margin-bottom: 14px;
@@ -297,12 +302,14 @@ section h2 {
     font-size: 16px;
 }
 
-#formulario-manutencao button {
+#formulario-manutencao button,
+#formulario-agendamento button {
     padding: 12px 24px;
     margin-top: 4px;
 }
 
-#formulario-manutencao button:hover {
+#formulario-manutencao button:hover,
+#formulario-agendamento button:hover {
     background-color: #000;
     color: #fff;
 }
@@ -319,6 +326,10 @@ th, td {
     padding: 12px 8px;
 }
 
+/* Espaço entre o formulário de agendamento e a tabela */
+#formulario-agendamento {
+    margin-bottom: 32px;
+}
 
 /* Alinhamento dos avisos nas notificações */
 .lista-notificacoes .alerta {
