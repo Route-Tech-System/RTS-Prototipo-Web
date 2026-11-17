@@ -23,21 +23,21 @@
 }
 
 .dashboard .ver-mais {
-    color: #000;
+    color: #A5B4CB;
     font-weight: bold;
     font-size: 14px;
     white-space: nowrap;
 }
 
 .dashboard .ver-mais:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 /* Cards clicáveis */
 .dashboard a.card {
     display: block;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -45,10 +45,11 @@
 .dashboard a.card:hover,
 .dashboard a.card:focus-visible {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 .dashboard .card p {
+    color: #A5B4CB;
     font-size: 13px;
     margin-top: 8px;
 }
@@ -59,13 +60,13 @@
 }
 
 /* Cores de status (mesma paleta das outras páginas) */
-.status-ok     { color: rgb(46, 138, 28);  font-weight: bold; }
-.status-alerta { color: rgb(216, 168, 35); font-weight: bold; }
-.status-erro   { color: rgb(163, 26, 26);  font-weight: bold; }
+.status-ok     { color: #5cb85c;  font-weight: bold; }
+.status-alerta { color: #e8b83d; font-weight: bold; }
+.status-erro   { color: #f26b6b;  font-weight: bold; }
 
 /* Alerta positivo (reserva aprovada) */
 .dashboard .alerta.aprovada {
-    border-left-color: rgb(46, 138, 28);
+    border-left-color: #5cb85c;
 }
 
 /* Barra de ocupação da frota */
@@ -78,7 +79,7 @@
 }
 
 .ocupacao progress {
-    accent-color: #000;
+    accent-color: #A5B4CB;
     flex: 1;
     max-width: 320px;
     height: 16px;
@@ -108,17 +109,18 @@
 .atalho {
     display: block;
     padding: 20px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
+    border-radius: 14px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .atalho:hover,
 .atalho:focus-visible {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 .atalho strong {

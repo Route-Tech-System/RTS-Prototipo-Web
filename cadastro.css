@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+
 *{
     margin: 0;
     padding: 0;
@@ -5,23 +7,23 @@
 }
 
 body {
-    font: 16px Arial;
+    font-family: "Figtree", "Segoe UI", Arial, sans-serif;
     font-size: 18px;
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: #1B1B1B;
 }
 
 header {
     display: flex;
     align-items: center;
     gap: 30px;
-    background-color: #fff;
+    background: #303030;
     padding: 20px;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #A5B4CB;
 }
 
 header a {
-    color: #000;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
 }
@@ -43,14 +45,16 @@ main {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: black;
+    background: #A5B4CB;
     margin-right: 8px;
 }
 
 .cadastro {
     width: 100%;
     max-width: 754px;
-    border: 2px solid #000;
+    background: #2b2b2b;
+    border: 1px solid #3d3d3d;
+    border-radius: 16px;
     padding: 30px;
 }
 
@@ -69,23 +73,28 @@ label {
 
 input,
 select {
-    border: 2px solid #000;
+    background: #1f1f1f;
+    color: #fff;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
     padding: 10px;
     font-size: 16px;
 }
 
 button {
     grid-column: 1 / -1;
-    border: 2px solid #000;
+    border: 1px solid #A5B4CB;
+    border-radius: 10px;
+    color: #fff;
     font-weight: bold;
     padding: 14px 40px;
-    background-color: #fff;
+    background-color: transparent;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 
@@ -99,10 +108,10 @@ button:hover {
 .botao {
     grid-column: auto;
     flex: 1;
-    border: 2px solid black;
+    border: 1px solid #A5B4CB;
     padding: 12px 40px;
-    background-color: #fff;
-    color: black;
+    background-color: transparent;
+    color: #fff;
     font-family: Arial;
     font-size: 16px;
     font-weight: bold;
@@ -110,8 +119,8 @@ button:hover {
 
 .botao:hover,
 .botao.ativo {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 /* Grupo de campos de cada tipo de cadastro */

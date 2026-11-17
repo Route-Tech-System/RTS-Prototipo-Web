@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+
 /* Resetando a página */
 * {
     margin: 0;
@@ -6,7 +8,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+    background-color: #1B1B1B;
+    color: #fff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,8 +21,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 2px solid #000000;
+    padding: 14px 28px;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 header nav {
@@ -27,9 +32,19 @@ header nav {
 }
 
 header a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+header a:hover {
+    background-color: #A5B4CB;
+    border-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 /* Área principal */
@@ -40,8 +55,9 @@ header a {
 
 /* Menu lateral */
 .menu {
+    background-color: #1f1f1f;
     width: 220px;
-    border-right: 2px solid #000000;
+    border-right: 1px solid #3d3d3d;
 }
 
 .menu ul {
@@ -49,25 +65,25 @@ header a {
 }
 
 .menu li {
-    border-bottom: 2px solid #000000;
+    border-bottom: 1px solid #3d3d3d;
     font-weight: bold;
 }
 
 .menu a {
     display: block;
     padding: 16px 20px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 
 .menu li:hover,
 .menu li.atual {
-    background-color: #000;
+    background-color: #A5B4CB;
 }
 
 .menu li:hover a,
 .menu li.atual a {
-    color: #fff;
+    color: #1B1B1B;
 }
 
 main {
@@ -83,16 +99,26 @@ main {
 }
 
 button {
-    border: 2px solid #000;
-    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
     font-weight: bold;
     padding: 8px 16px;
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #A5B4CB;
+    border-color: #A5B4CB;
+    color: #1B1B1B;
+}
+
 .filtros button.ativo {
-    background: #000;
-    color: #fff;
+    background: #A5B4CB;
+    border-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 table {
@@ -100,10 +126,14 @@ table {
     border-collapse: collapse;
 }
 
+th {
+    color: #A5B4CB;
+}
+
 th, td {
     padding: 12px 16px;
     text-align: left;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 td button {
@@ -116,15 +146,18 @@ td button {
 }
 
 #pendencia{
-background: rgb(216, 168, 35);
+background: #e8b83d;
+color: #1B1B1B;
 }
 
 #aprovacao{ 
-    background: rgb(46, 138, 28);
+    background: #5cb85c;
+color: #1B1B1B;
 }
 
 #recusados{ 
-    background: rgb(163, 26, 26);
+    background: #f26b6b;
+color: #1B1B1B;
 }
 
 .botoes-acao {
@@ -157,14 +190,15 @@ background: rgb(216, 168, 35);
 }
 
 .card {
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
+    border-radius: 14px;
     padding: 20px;
 }
 
 .card h3 {
     font-size: 14px;
-    color: #000;
+    color: #A5B4CB;
     margin-bottom: 12px;
 }
 
@@ -174,23 +208,24 @@ background: rgb(216, 168, 35);
 }
 
 #manu_vencida {
-    color: rgb(163, 26, 26);
+    color: #f26b6b;
 }
 
 #manu_realizada {
-    color: rgb(46, 138, 28);
+    color: #5cb85c;
 }
 
 #manu {
-    color: rgb(216, 168, 35);
+    color: #e8b83d;
 }
 
 /* Seções */
 .alertas,
 .veiculos-manutencao,
 .historico {
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #262626;
+    border: 1px solid #3d3d3d;
+    border-radius: 16px;
     padding: 24px;
     margin-top: 24px;
 }
@@ -211,39 +246,40 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #2b2b2b;
     padding: 20px;
-    border: 2px solid #000;
-    border-left: 8px solid;
+    border: 1px solid #3d3d3d;
+    border-left: 5px solid;
+    border-radius: 12px;
 }
 
 .vencida {
-    border-left-color: rgb(163, 26, 26);
+    border-left-color: #f26b6b;
 }
 
 .proxima {
-    border-left-color: rgb(216, 168, 35);
+    border-left-color: #e8b83d;
 }
 
 .alerta p {
-    color: #000;
+    color: #A5B4CB;
     font-size: 13px;
     margin-top: 5px;
 }
 
 .vencida .situacao span {
-    color: rgb(163, 26, 26);
+    color: #f26b6b;
     font-weight: bold;
 }
 
 .proxima .situacao span {
-    color: rgb(216, 168, 35);
+    color: #e8b83d;
     font-weight: bold;
 }
 
 .alerta button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 .lista-veiculos {
@@ -253,7 +289,9 @@ section h2 {
 }
 
 .veiculo {
-    border: 2px solid #000;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
+    border-radius: 12px;
     padding: 20px;
 }
 
@@ -277,8 +315,8 @@ section h2 {
     padding: 24px;
     margin: 0;
 
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
 
     display: flex;
     flex-direction: column;
@@ -298,7 +336,11 @@ section h2 {
     width: 100%;
     padding: 10px;
     margin-bottom: 14px;
-    border: 2px solid #000;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: inherit;
     font-size: 16px;
 }
 
@@ -310,8 +352,8 @@ section h2 {
 
 #formulario-manutencao button:hover,
 #formulario-agendamento button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 #veiculos-filtros {
@@ -379,7 +421,9 @@ th, td {
     width: 100%;
     height: 36px;
     padding: 6px;
-    border: 1px solid #999;
+    border: 1px solid #3d3d3d;
+    background-color: #1f1f1f;
+    color: #fff;
     font-size: 14px;
 }
 
@@ -399,34 +443,34 @@ th, td {
 
   /* personalizando os cards de manutenção */
 .card-manutencao {
-    background-color: #fff;
-    border: 1px solid #d5d5d5;
-    border-left: 5px solid #383838;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
+    border-left: 5px solid #A5B4CB;
     border-radius: 10px;
     padding: 22px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card-manutencao:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 .card-manutencao h3 {
     font-size: 18px;
     margin-bottom: 15px;
-    color: #222;
+    color: #fff;
 }
 
 .card-manutencao p {
     font-size: 14px;
     margin: 9px 0;
-    color: #444;
+    color: #A5B4CB;
 }
 
 .card-manutencao strong {
-    color: #222;
+    color: #fff;
 }
 
 .lista-veiculos {
@@ -443,18 +487,19 @@ th, td {
 #buscar-manutencao {
     width: 100%;
     padding: 13px 16px 13px 42px;
-    border: 1px solid #ccc;
+    border: 1px solid #3d3d3d;
     border-radius: 8px;
-    background-color: #f8f8f8;
+    background-color: #1f1f1f;
+    color: #fff;
     font-size: 14px;
     outline: none;
     transition: 0.2s;
 }
 
 #buscar-manutencao:focus {
-    border-color: #383838;
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+    border-color: #A5B4CB;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 0 3px rgba(165, 180, 203, 0.2);
 }
 
 .busca-manutencoes::before {
@@ -464,12 +509,12 @@ th, td {
     top: 50%;
     transform: translateY(-50%);
     font-size: 23px;
-    color: #777;
+    color: #A5B4CB;
     pointer-events: none;
 }
 
 #buscar-manutencao::placeholder {
-    color: #888;
+    color: #8a96aa;
 }
 
 .busca {
@@ -482,18 +527,19 @@ th, td {
 #buscar-motorista {
     width: 100%;
     padding: 13px 16px 13px 42px;
-    border: 1px solid #ccc;
+    border: 1px solid #3d3d3d;
     border-radius: 8px;
-    background-color: #f8f8f8;
+    background-color: #1f1f1f;
+    color: #fff;
     font-size: 14px;
     outline: none;
     transition: 0.2s;
 }
 
 #buscar-motorista:focus {
-    border-color: #383838;
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+    border-color: #A5B4CB;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 0 3px rgba(165, 180, 203, 0.2);
 }
 
 .busca::before {
@@ -503,12 +549,12 @@ th, td {
     top: 50%;
     transform: translateY(-50%);
     font-size: 23px;
-    color: #777;
+    color: #A5B4CB;
     pointer-events: none;
 }
 
 #buscar-motorista::placeholder {
-    color: #888;
+    color: #8a96aa;
 }
 
 /* ===== Perfil do motorista ===== */
@@ -534,7 +580,7 @@ th, td {
     height: 110px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #000;
+    border: 1px solid #3d3d3d;
 }
 
 .foto-perfil img {
@@ -567,8 +613,8 @@ th, td {
     padding: 24px;
     margin: 0 0 32px;
 
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #2b2b2b;
+    border: 1px solid #3d3d3d;
 
     display: flex;
     flex-direction: column;
@@ -590,7 +636,11 @@ th, td {
     width: 100%;
     padding: 10px;
     margin-bottom: 14px;
-    border: 2px solid #000;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: inherit;
     font-size: 16px;
 }
 
@@ -608,8 +658,8 @@ th, td {
 
 #form-retirada button:hover,
 #form-devolucao button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #A5B4CB;
+    color: #1B1B1B;
 }
 
 #form-retirada[hidden],
@@ -652,7 +702,7 @@ main {
     .menu {
         width: 100%;
         border-right: 0;
-        border-bottom: 2px solid #000000;
+        border-bottom: 1px solid #3d3d3d;
     }
 
     .menu ul {
@@ -663,7 +713,7 @@ main {
     .menu li {
         flex: 0 0 auto;
         border-bottom: 0;
-        border-right: 2px solid #000000;
+        border-right: 1px solid #3d3d3d;
         white-space: nowrap;
     }
 
