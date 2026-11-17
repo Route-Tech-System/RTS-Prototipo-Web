@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS - Route Tech System</title>
+    <link rel="stylesheet" href="painel.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>RTS - Route Tech System</h1>
+
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="painelMotorista.html">Dashboard</a></li>
+                <li><a href="perfilMotorista.html">Perfil</a></li>
+                <li><a href="agendamentoMotorista.html">Agendamento</a></li>
+                <li><a href="frotasMotorista.html">Frotas</a></li>
+                <li><a href="checklistMotorista.html">Check-List</a></li>
+                <li class="atual">
+                    <a href="notificacoesMotorista.html" aria-current="page">Notificações</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="conteudo">
+
+            <section aria-labelledby="titulo-notificacoes">
+
+                <h2 id="titulo-notificacoes">Notificações</h2>
+                <h4>Avisos sobre as suas reservas</h4>
+
+                <div class="filtros">
+                    <button type="button" class="ativo">Todas</button>
+                    <button type="button">Não lidas</button>
+                    <button type="button">Lidas</button>
+                    <button type="button">Marcar todas como lidas</button>
+                </div>
+
+                <div class="lista-alertas lista-notificacoes">
+
+                    <div class="alerta proxima">
+                        <div class="info-veiculo">
+                            <h3>● Devolução em 1 hora: Toyota Corolla (KLM-0000)</h3>
+                            <p>16/11/2026 às 16:00</p>
+                        </div>
+
+                        <div class="situacao">
+                            <span>Lembrete de devolução</span>
+                            <p>Não lida</p>
+                        </div>
+
+                        <form action="checklistMotorista.html">
+                            <button type="submit">Devolver veículo</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta">
+                        <div class="info-veiculo">
+                            <h3>● Reserva aprovada: Porsche 911, 20/11/2026 às 14:00</h3>
+                            <p>16/11/2026 às 10:20</p>
+                        </div>
+
+                        <div class="situacao">
+                            <span>Reserva aprovada</span>
+                            <p>Não lida</p>
+                        </div>
+
+                        <form action="agendamentoMotorista.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta vencida">
+                        <div class="info-veiculo">
+                            <h3>● Reserva recusada: Ford GT, 01/01/2023. Motivo: veículo reservado para outra turma.</h3>
+                            <p>15/11/2026 às 17:45</p>
+                        </div>
+
+                        <div class="situacao">
+                            <span>Reserva recusada</span>
+                            <p>Não lida</p>
+                        </div>
+
+                        <form action="agendamentoMotorista.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta vencida">
+                        <div class="info-veiculo">
+                            <h3>Reserva cancelada: Fiat Argo, 22/12/2022. Motivo: veículo em manutenção.</h3>
+                            <p>14/11/2026 às 08:30</p>
+                        </div>
+
+                        <div class="situacao">
+                            <span>Reserva cancelada</span>
+                            <p>Lida</p>
+                        </div>
+
+                        <form action="agendamentoMotorista.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta proxima">
+                        <div class="info-veiculo">
+                            <h3>Devolução em 2 horas: Volkswagen Gol (QRS-2222)</h3>
+                            <p>13/11/2026 às 09:00</p>
+                        </div>
+
+                        <div class="situacao">
+                            <span>Lembrete de devolução</span>
+                            <p>Lida</p>
+                        </div>
+
+                        <form action="checklistMotorista.html">
+                            <button type="submit">Devolver veículo</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

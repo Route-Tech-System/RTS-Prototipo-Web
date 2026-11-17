@@ -1,0 +1,150 @@
+/* =========================================================
+   DASHBOARD (gestor) e INÍCIO (motorista)
+   Usado somente em painel.html e painelMotorista.html.
+   Reaproveita as classes de painel.css (.card, .indicadores,
+   .historico, .alerta, .filtros, tabelas) e só acrescenta o que falta.
+   ========================================================= */
+
+.dashboard > h4 {
+    margin-bottom: 24px;
+}
+
+/* Cabeçalho de seção: título à esquerda, link à direita */
+.dashboard .cabecalho-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.dashboard .cabecalho-secao h2 {
+    margin: 0;
+}
+
+.dashboard .ver-mais {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dashboard .ver-mais:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Cards clicáveis */
+.dashboard a.card {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard a.card:hover,
+.dashboard a.card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+.dashboard .card p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.dashboard .card .valor-texto {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Cores de status (mesma paleta das outras páginas) */
+.status-ok     { color: rgb(46, 138, 28);  font-weight: bold; }
+.status-alerta { color: rgb(216, 168, 35); font-weight: bold; }
+.status-erro   { color: rgb(163, 26, 26);  font-weight: bold; }
+
+/* Alerta positivo (reserva aprovada) */
+.dashboard .alerta.aprovada {
+    border-left-color: rgb(46, 138, 28);
+}
+
+/* Barra de ocupação da frota */
+.ocupacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.ocupacao progress {
+    accent-color: #000;
+    flex: 1;
+    max-width: 320px;
+    height: 16px;
+}
+
+/* Coluna do botão um pouco mais larga p/ caber "Registrar manutenção" */
+.dashboard .lista-notificacoes .alerta {
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 190px;
+}
+
+/* Tabelas largas rolam dentro da própria seção */
+.dashboard .tabela-rolagem {
+    overflow-x: auto;
+}
+
+.dashboard .vazio {
+    padding: 12px 0;
+}
+
+/* Atalhos do motorista (mesmo padrão dos cards) */
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.atalho {
+    display: block;
+    padding: 20px;
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    border: 2px solid #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.atalho:hover,
+.atalho:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+.atalho strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.atalho small {
+    font-size: 13px;
+}
+
+/* Telas menores */
+@media (max-width: 900px) {
+    .dashboard .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard .lista-notificacoes .alerta {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 560px) {
+    .dashboard .indicadores {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS - Route Tech System</title>
+    <link rel="stylesheet" href="painel.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>RTS - Route Tech System</h1>
+
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li class="atual">
+                    <a href="painel.html" aria-current="page">Dashboard</a>
+                </li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="veiculos.html">Veículos</a></li>
+                <li><a href="motoristas.html">Motoristas</a></li>
+                <li><a href="manutencoes.html">Manutenções</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="notificacoes.html">Notificações</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo dashboard">
+            <h2 id="titulo-inicio">Início</h2>
+            <h4>Visão geral da frota — <span id="data-hoje">17/11/2026</span></h4>
+
+            <!-- Indicadores principais -->
+            <section class="indicadores" aria-label="Indicadores principais">
+                <a class="card" href="reservas.html">
+                    <h3>Reservas pendentes</h3>
+                    <span id="total-pendentes" class="status-alerta">02</span>
+                </a>
+                <a class="card" href="veiculos.html">
+                    <h3>Veículos disponíveis</h3>
+                    <span class="status-ok">02</span>
+                </a>
+                <a class="card" href="veiculos.html">
+                    <h3>Veículos em uso</h3>
+                    <span class="status-erro">02</span>
+                </a>
+                <a class="card" href="motoristas.html">
+                    <h3>Motoristas ativos</h3>
+                    <span>03</span>
+                    <p>de 4 cadastrados</p>
+                </a>
+            </section>
+
+            <!-- Pontos de atenção -->
+            <section class="historico" aria-labelledby="titulo-atencao">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-atencao">Precisa de atenção</h2>
+                    <a class="ver-mais" href="notificacoes.html">Ver todas as notificações</a>
+                </div>
+
+                <div class="lista-alertas lista-notificacoes">
+                    <div class="alerta vencida">
+                        <div class="info-veiculo">
+                            <h3>ABC-1234 passou do limite de manutenção</h3>
+                            <p>Quilometragem atual: 52.300 km</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Manutenção vencida</span>
+                            <p><strong>Limite:</strong> 50.000 km</p>
+                        </div>
+                        <form action="registrar-manutencao.html">
+                            <button type="submit">Registrar manutenção</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta vencida">
+                        <div class="info-veiculo">
+                            <h3>Nova avaria: ABC-1234, Arranhão</h3>
+                            <p>09/11/2026 às 11:30</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Avaria em checklist</span>
+                            <p>Não lida</p>
+                        </div>
+                        <form action="reservas.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta proxima">
+                        <div class="info-veiculo">
+                            <h3>DEF-5678 está a 400 km da manutenção</h3>
+                            <p>09/11/2026 às 09:05</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Limite de km</span>
+                            <p>Não lida</p>
+                        </div>
+                        <form action="manutencoes.html">
+                            <button type="submit">Ver alertas</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reservas aguardando decisão -->
+            <section class="historico" aria-labelledby="titulo-pendentes">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-pendentes">Reservas aguardando aprovação</h2>
+                    <a class="ver-mais" href="reservas.html">Ver todas as reservas</a>
+                </div>
+
+                <p id="sem-pendentes" class="vazio" hidden>Nenhuma reserva pendente.</p>
+
+                <div class="tabela-rolagem">
+                    <table id="tabela-pendentes">
+                        <thead>
+                            <tr>
+                                <th scope="col">Solicitante</th>
+                                <th scope="col">Veículo</th>
+                                <th scope="col">Período</th>
+                                <th scope="col">Finalidade</th>
+                                <th scope="col">Prioridade</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-status="pendente">
+                                <td>Julia Ribeiro</td>
+                                <td>Ford GT</td>
+                                <td>01/01/2023 às 12:00 - 01/01/2023 às 18:00</td>
+                                <td>Reunião</td>
+                                <td>Alta</td>
+                                <td class="status status-alerta">Pendente</td>
+                                <td>
+                                    <div class="botoes-acao">
+                                        <button type="button" class="aprovar">Aprovar</button>
+                                        <button type="button" class="recusar">Recusar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="pendente">
+                                <td>Roberto</td>
+                                <td>Flashback</td>
+                                <td>04/11/2023 às 07:00 - 01/01/2023 às 12:00</td>
+                                <td>Aula</td>
+                                <td>Média</td>
+                                <td class="status status-alerta">Pendente</td>
+                                <td>
+                                    <div class="botoes-acao">
+                                        <button type="button" class="aprovar">Aprovar</button>
+                                        <button type="button" class="recusar">Recusar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Situação da frota -->
+            <section class="historico" aria-labelledby="titulo-frota">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-frota">Situação da frota</h2>
+                    <a class="ver-mais" href="veiculos.html">Ver veículos</a>
+                </div>
+
+                <div class="ocupacao">
+                    <label for="barra-frota">Frota em uso:</label>
+                    <progress id="barra-frota" value="2" max="6">2 de 6</progress>
+                    <span>2 de 6 veículos</span>
+                </div>
+
+                <div class="tabela-rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Veículo</th>
+                                <th scope="col">Placa</th>
+                                <th scope="col">Combustível</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Motorista</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fiat Argo</td>
+                                <td>NOP-1111</td>
+                                <td>Flex</td>
+                                <td class="status-erro">Em uso</td>
+                                <td>Roberto</td>
+                            </tr>
+                            <tr>
+                                <td>Volkswagen Gol</td>
+                                <td>QRS-2222</td>
+                                <td>Flex</td>
+                                <td class="status-erro">Em uso</td>
+                                <td>Julia Ribeiro</td>
+                            </tr>
+                            <tr>
+                                <td>Porsche 911</td>
+                                <td>HIJ-9999</td>
+                                <td>Gasolina</td>
+                                <td class="status-ok">Disponível</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>Toyota Corolla</td>
+                                <td>KLM-0000</td>
+                                <td>Gasolina</td>
+                                <td class="status-ok">Disponível</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>Ford GT</td>
+                                <td>ABC-1234</td>
+                                <td>Gasolina</td>
+                                <td class="status-alerta">Pendente</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>Flashback</td>
+                                <td>DEF-4567</td>
+                                <td>Gasolina</td>
+                                <td class="status-alerta">Pendente</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Manutenções -->
+            <section class="historico" aria-labelledby="titulo-manutencoes">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-manutencoes">Manutenções</h2>
+                    <a class="ver-mais" href="manutencoes.html">Ver manutenções</a>
+                </div>
+
+                <div class="indicadores">
+                    <a class="card" href="manutencoes.html">
+                        <h3>Próximas Manutenções</h3>
+                        <span>03</span>
+                    </a>
+                    <a class="card" href="manutencoes.html">
+                        <h3>Em Manutenção</h3>
+                        <span id="manu">04</span>
+                    </a>
+                    <a class="card" href="manutencoes.html">
+                        <h3>Manutenções Vencidas</h3>
+                        <span id="manu_vencida">02</span>
+                    </a>
+                    <a class="card" href="manutencoes.html">
+                        <h3>Realizadas</h3>
+                        <span id="manu_realizada">18</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Resumo do período -->
+            <section class="historico" aria-labelledby="titulo-resumo">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-resumo">Resumo dos últimos 30 dias</h2>
+                    <a class="ver-mais" href="relatorios.html">Ver relatórios</a>
+                </div>
+
+                <div class="indicadores">
+                    <a class="card" href="relatorios.html">
+                        <h3>Km rodados</h3>
+                        <span>1.240 km</span>
+                    </a>
+                    <a class="card" href="relatorios.html">
+                        <h3>Valor abastecido</h3>
+                        <span>R$ 702,00</span>
+                    </a>
+                    <a class="card" href="relatorios.html">
+                        <h3>Custo de manutenção</h3>
+                        <span>R$ 1.350,00</span>
+                    </a>
+                    <a class="card" href="relatorios.html">
+                        <h3>Custo por km</h3>
+                        <span>R$ 1,65</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

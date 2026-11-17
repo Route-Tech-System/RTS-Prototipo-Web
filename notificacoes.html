@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificações - RTS</title>
+  <link rel="stylesheet" href="painel.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>RTS - Route Tech System</h1>
+    <nav>
+      <a href="index.html">Sair</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav class="menu">
+      <ul>
+        <li><a href="painel.html">Dashboard</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="veiculos.html">Veiculos</a></li>
+        <li><a href="motoristas.html">Motoristas</a></li>
+        <li><a href="manutencoes.html">Manutenções</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li class="atual"><a href="notificacoes.html">Notificações</a></li>
+      </ul>
+    </nav>
+
+    <main class="conteudo">
+      <h2>Notificações</h2>
+      <h4>Avisos do sistema para o gestor</h4>
+
+      <section class="historico">
+        <h2>Resumo</h2>
+
+        <div class="indicadores">
+          <div class="card">
+            <h3>Não lidas</h3>
+            <span id="total-nao-lidas">0</span>
+          </div>
+
+          <div class="card">
+            <h3>Novas solicitações</h3>
+            <span id="total-solicitacoes">0</span>
+          </div>
+
+          <div class="card">
+            <h3>Avarias em checklist</h3>
+            <span id="total-avarias">0</span>
+          </div>
+
+          <div class="card">
+            <h3>Limite de km</h3>
+            <span id="total-km-alertas">0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="historico">
+        <h2>Avisos recentes</h2>
+
+        <div class="filtros">
+          <button class="ativo" data-filtro="todos">Todas</button>
+          <button data-filtro="nao-lida">Não lidas</button>
+          <button data-filtro="lida">Lidas</button>
+          <button id="marcar-todas">Marcar todas como lidas</button>
+        </div>
+
+        <div class="lista-alertas lista-notificacoes">
+
+          <div class="alerta" data-status="nao-lida" data-tipo="solicitacao">
+            <div class="info-veiculo">
+              <h3>● Nova solicitação: Julia Ribeiro, Ford GT em 01/01/2023</h3>
+              <p>09/11/2026 às 15:42</p>
+            </div>
+
+            <div class="situacao">
+              <span><strong>Solicitação de reserva</strong></span>
+              <p class="texto-status">Não lida</p>
+            </div>
+
+            <form action="reservas.html">
+              <button>Abrir solicitação</button>
+            </form>
+          </div>
+
+          <div class="alerta" data-status="nao-lida" data-tipo="solicitacao">
+            <div class="info-veiculo">
+              <h3>● Nova solicitação: Roberto, Flashback em 04/11/2023</h3>
+              <p>09/11/2026 às 14:15</p>
+            </div>
+
+            <div class="situacao">
+              <span><strong>Solicitação de reserva</strong></span>
+              <p class="texto-status">Não lida</p>
+            </div>
+
+            <form action="reservas.html">
+              <button>Abrir solicitação</button>
+            </form>
+          </div>
+
+          <div class="alerta vencida" data-status="nao-lida" data-tipo="avaria">
+            <div class="info-veiculo">
+              <h3>● Nova avaria: ABC-1234, Arranhão</h3>
+              <p>09/11/2026 às 11:30</p>
+            </div>
+
+            <div class="situacao">
+              <span>Avaria em checklist</span>
+              <p class="texto-status">Não lida</p>
+            </div>
+
+            <form action="reservas.html">
+              <button>Ver reserva</button>
+            </form>
+          </div>
+
+          <div class="alerta proxima" data-status="nao-lida" data-tipo="km">
+            <div class="info-veiculo">
+              <h3>● DEF-5678 está a 400 km da manutenção</h3>
+              <p>09/11/2026 às 09:05</p>
+            </div>
+
+            <div class="situacao">
+              <span>Limite de km</span>
+              <p class="texto-status">Não lida</p>
+            </div>
+
+            <form action="manutencoes.html">
+              <button>Ver alertas</button>
+            </form>
+          </div>
+
+          <div class="alerta vencida" data-status="lida" data-tipo="avaria">
+            <div class="info-veiculo">
+              <h3>3 novas avarias: KLM-0000</h3>
+              <p>08/11/2026 às 17:50</p>
+            </div>
+
+            <div class="situacao">
+              <span>Avaria em checklist</span>
+              <p class="texto-status">Lida</p>
+            </div>
+
+            <form action="reservas.html">
+              <button>Ver reserva</button>
+            </form>
+          </div>
+
+          <div class="alerta" data-status="lida" data-tipo="solicitacao">
+            <div class="info-veiculo">
+              <h3>Nova solicitação: Rogerio, Porsche 911 em 11/01/2023</h3>
+              <p>07/11/2026 às 10:12</p>
+            </div>
+
+            <div class="situacao">
+              <span><strong>Solicitação de reserva</strong></span>
+              <p class="texto-status">Lida</p>
+            </div>
+
+            <form action="reservas.html">
+              <button>Abrir solicitação</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

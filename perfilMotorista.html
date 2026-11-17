@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS - Route Tech System</title>
+    <link rel="stylesheet" href="painel.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>RTS - Route Tech System</h1>
+
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="painelMotorista.html">Dashboard</a></li>
+                <li class="atual">
+                    <a href="perfilMotorista.html" aria-current="page">Perfil</a>
+                </li>
+                <li><a href="agendamentoMotorista.html">Agendamento</a></li>
+                <li><a href="frotasMotorista.html">Frotas</a></li>
+                <li><a href="checklistMotorista.html">Check-List</a></li>
+                <li><a href="notificacoesMotorista.html">Notificações</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo">
+            <h2>Perfil do Motorista</h2>
+            <h4>Seus dados, situação da CNH e histórico de viagens</h4>
+
+            <section class="historico perfil-dados" aria-label="Dados do motorista">
+                <div class="informacoes">
+                    <p><strong>Nome:</strong> João da Silva</p>
+                    <p><strong>Matrícula:</strong> 123456</p>
+                    <p><strong>Email:</strong> joao.silva@example.com</p>
+                    <p><strong>Telefone:</strong> (71) 9 9999-9999</p>
+                    <p><strong>Categoria CNH:</strong> B</p>
+                    <p><strong>RA:</strong> 2718703</p>
+                    <p><strong>Cargo:</strong> Docente</p>
+                </div>
+                <div class="foto-perfil">
+                    <img src="/imagens/icon-perfil.jpg" alt="Ícone de perfil do motorista">
+                </div>
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-cnh">
+                <h2 id="titulo-cnh">Situação da CNH</h2>
+                <div class="informacoes-cnh">
+                    <p><strong>Validade:</strong> 31/12/2025</p>
+                    <p><strong>Status:</strong> <span id="status-cnh"></span></p>
+                </div>
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-viagens">
+                <h2 id="titulo-viagens">Histórico de viagens</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Veículo</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10/11/2026</td>
+                            <td>Fiat Argo</td>
+                            <td>Salvador - BA</td>
+                            <td>Concluída</td>
+                        </tr>
+                        <tr>
+                            <td>05/11/2026</td>
+                            <td>Chevrolet Onix</td>
+                            <td>Lauro de Freitas - BA</td>
+                            <td>Concluída</td>
+                        </tr>
+                        <tr>
+                            <td>28/10/2026</td>
+                            <td>Ford Ka</td>
+                            <td>Camaçari - BA</td>
+                            <td>Concluída</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        const validadeCNH = new Date(2025, 11, 31);
+        const hoje = new Date();
+        hoje.setHours(0, 0, 0, 0);
+
+        const diferenca = Math.ceil(
+            (validadeCNH - hoje) / (1000 * 60 * 60 * 24)
+        );
+
+        const statusCNH = document.getElementById("status-cnh");
+        statusCNH.style.fontWeight = "bold";
+
+        if (diferenca < 0) {
+            statusCNH.textContent = "Vencida";
+            statusCNH.style.color = "rgb(163, 26, 26)";
+        } else if (diferenca <= 30) {
+            statusCNH.textContent = "Próxima do vencimento";
+            statusCNH.style.color = "rgb(216, 168, 35)";
+        } else {
+            statusCNH.textContent = "Em dia";
+            statusCNH.style.color = "rgb(46, 138, 28)";
+        }
+    </script>
+
+</body>
+</html>

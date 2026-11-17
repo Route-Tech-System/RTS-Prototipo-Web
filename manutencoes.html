@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenções - RTS</title>
+  <link rel="stylesheet" href="painel.css">
+</head>
+<body>
+
+  <header>
+    <h1>RTS - Route Tech System</h1>
+    <nav>
+      <a href="index.html">Sair</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav class="menu">
+      <ul>
+        <li><a href="painel.html">Dashboard</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="veiculos.html">Veiculos</a></li>
+        <li><a href="motoristas.html">Motoristas</a></li>
+        <li class="atual"><a href="manutencoes.html">Manutenções</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="notificacoes.html">Notificações</a></li>
+      </ul>
+    </nav>
+    <main  class="conteudo">
+
+<h2 id="titulo-manutencao">Manutenções</h2>
+    <section class = "indicadores">
+      <article class ="card">
+        <h3>Próximas Manutenções</h3>
+        <span>03</span>
+      </article>
+
+      <article class ="card">
+        <h3>Em Manutenção</h3>
+        <span id="manu">04</span>
+      </article>
+      
+      <article class ="card">
+        <h3>Manutenções Vencidas</h3>
+        <span id="manu_vencida">02</span>
+      </article>
+
+      <article class ="card">
+        <h3>Realizadas</h3>
+        <span id="manu_realizada">18</span>
+      </article>
+    </section>
+
+      <section class="alertas"><!--DIVISÃO DOS ALERTAS-->
+        <h2>Alertas de manutenção</h2>
+        
+        <div class="lista-alertas">
+
+          <article class="alerta vencida">
+
+            <div class="info-veiculo">
+              <h3>ABC-1234</h3>
+              <p>Fiat GT</p>
+            </div>
+
+            <div class="info-km">
+              <p>Quilometragem atual</p>
+              <strong>52.300 Km</strong>
+            </div>
+
+              <div class="situacao">
+                <span>Manutenção Vencida</span>
+                <p><strong>Limite:</strong> 50.000 Km</p>
+              </div>
+
+       <button onclick="window.location.href='registrar-manutencao.html'">Registrar manutenção</button>
+          </article>
+
+        <article class="alerta proxima">
+
+        <div class="info-veiculo">
+            <h3>DEF-5678</h3>
+            <p>Chevrolet Onix</p>
+        </div>
+
+        <div class="info-km">
+            <p>Quilometragem atual</p>
+            <strong>49.600 km</strong>
+        </div>
+
+        <div class="situacao">
+            <span>Manutenção próxima</span>
+            <p><strong>Limite:</strong> 50.000 km</p>
+        </div>
+       <button onclick="window.location.href='registrar-manutencao.html'">Registrar manutenção</button>
+      </article>
+      </section>
+
+        
+      <section class="veiculos-manutencao">
+    <h2>Veículos em manutenção</h2>
+
+    <div class="lista-veiculos">
+
+        <article class="veiculo">
+            <h3>Fiat Uno</h3>
+            <p><strong>Placa:</strong> ABC-1234</p>
+            <p><strong>Tipo:</strong> Corretiva</p>
+            <p><strong>Problema:</strong> Falha no motor</p>
+            <p><strong>Status:</strong> Em andamento</p>
+        </article>
+
+        <article class="veiculo">
+            <h3>Chevrolet Onix</h3>
+            <p><strong>Placa:</strong> DEF-5678</p>
+            <p><strong>Tipo:</strong> Preventiva</p>
+            <p><strong>Problema:</strong> Revisão periódica</p>
+            <p><strong>Status:</strong> Em andamento</p>
+        </article>
+    </div>
+</section>
+
+
+      
+<section class="historico">
+    <h2>Manutenções registradas</h2>
+
+    <div class="busca-manutencoes">
+        <input
+            type="text"
+            id="buscar-manutencao"
+            placeholder="Buscar por veículo ou tipo de manutenção..."
+        >
+    </div>
+
+    <div id="lista-manutencoes" class="lista-veiculos">
+        // Os cards serão criados pelo JavaScript 
+    </div>
+</section>
+
+
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

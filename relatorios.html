@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - RTS</title>
+    <link rel="stylesheet" href="painel.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>RTS - Route Tech System</h1>
+
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="painel.html">Dashboard</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="veiculos.html">Veículos</a></li>
+                <li><a href="motoristas.html">Motoristas</a></li>
+                <li><a href="manutencoes.html">Manutenções</a></li>
+                <li class="atual">
+                    <a href="relatorios.html" aria-current="page">Relatórios</a>
+                </li>
+                <li><a href="notificacoes.html">Notificações</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo">
+
+            <h2>Relatórios</h2>
+
+            <p>Período: 10/10/2026 a 09/11/2026 (últimos 30 dias)</p>
+
+            <section class="historico" aria-labelledby="titulo-filtros">
+
+                <h2 id="titulo-filtros">Filtros</h2>
+
+                <div class="filtros">
+                    <button id="sete-dias" type="button">Últimos 7 dias</button>
+                    <button id="trinta-dias" class="ativo" type="button">Últimos 30 dias</button>
+                    <button id="noventa-dias" type="button">Últimos 90 dias</button>
+                    <button id="personalizado" type="button">Personalizado</button>
+                </div>
+
+            <div class="filtros filtros-detalhados">
+
+                <label for="data-inicial">De:
+                    <input type="date" id="data-inicial" disabled>
+                </label>
+
+                <label for="data-final">Até:
+                    <input type="date" id="data-final" disabled>
+                </label>
+
+                <label for="filtro-unidade">Unidade:
+                    <select id="filtro-unidade">
+                        <option>Todas as unidades</option>
+                        <option>Camaçari</option>
+                        <option>Lauro de Freitas</option>
+                    </select>
+                </label>
+
+                <label for="filtro-motorista">Motorista:
+                    <select id="filtro-motorista">
+                        <option>Todos os motoristas</option>
+                        <option>Julia Ribeiro</option>
+                        <option>Roberto</option>
+                        <option>Rogério</option>
+                        <option>Caio Jovita</option>
+                    </select>
+                </label>
+
+                    <button id="aplicar-filtros" type="button">Aplicar</button>
+                    <button id="limpar-filtros" type="button">Limpar</button>
+            </div>
+
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-resumo">
+
+                <h2 id="titulo-resumo">Resumo do período</h2>
+
+                <div class="indicadores">
+
+                    <article class="card">
+                        <h3>Km rodados</h3>
+                        <span id="total-km">1.240 km</span>
+                    </article>
+
+                    <article class="card">
+                        <h3>Valor abastecido</h3>
+                        <span id="total-abastecimento">R$ 702,00</span>
+                    </article>
+
+                    <article class="card">
+                        <h3>Custo de manutenção</h3>
+                        <span id="total-manutencao">R$ 1.350,00</span>
+                    </article>
+
+                    <article class="card">
+                        <h3>Custo por km</h3>
+                        <span id="custo-por-km">R$ 1,65</span>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-quilometragem">
+
+                <h2 id="titulo-quilometragem">Quilometragem por veículo</h2>
+
+                <table>
+                    <caption>Quilometragem percorrida por veículo no período</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Veículo</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Comparativo</th>
+                            <th scope="col">Km rodados</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr data-unidade="Lauro de Freitas" data-motorista="Julia Ribeiro">
+                            <td>Ford GT</td>
+                            <td>ABC-1234</td>
+                            <td>
+                                <progress value="420" max="500" aria-label="Ford GT: 420 km">420 km</progress>
+                            </td>
+                            <td>420 km</td>
+                        </tr>
+
+                        <tr data-unidade="Lauro de Freitas" data-motorista="Caio Jovita">
+                            <td>Toyota Corolla</td>
+                            <td>KLM-0000</td>
+                            <td>
+                                <progress value="330" max="500" aria-label="Toyota Corolla: 330 km">330 km</progress>
+                            </td>
+                            <td>330 km</td>
+                        </tr>
+
+                        <tr data-unidade="Camaçari" data-motorista="Roberto">
+                            <td>Flashback</td>
+                            <td>DEF-4567</td>
+                            <td>
+                                <progress value="310" max="500" aria-label="Flashback: 310 km">310 km</progress>
+                            </td>
+                            <td>310 km</td>
+                        </tr>
+
+                        <tr data-unidade="Camaçari" data-motorista="Rogério">
+                            <td>Porsche 911</td>
+                            <td>HIJ-9999</td>
+                            <td>
+                                <progress value="180" max="500" aria-label="Porsche 911: 180 km">180 km</progress>
+                            </td>
+                            <td>180 km</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-consumo">
+
+                <h2 id="titulo-consumo">Consumo e custo por veículo</h2>
+
+                <table>
+                    <caption>Consumo de combustível e custos por veículo</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Veículo</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Litros</th>
+                            <th scope="col">Valor abastecido</th>
+                            <th scope="col">Km rodados</th>
+                            <th scope="col">Custo por km</th>
+                            <th scope="col">Custo de manutenção</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr data-unidade="Lauro de Freitas" data-motorista="Julia Ribeiro">
+                            <td>Ford GT</td>
+                            <td>ABC-1234</td>
+                            <td>52,0 L</td>
+                            <td>R$ 312,00</td>
+                            <td>420 km</td>
+                            <td>R$ 2,12</td>
+                            <td>R$ 580,00</td>
+                        </tr>
+
+                        <tr data-unidade="Lauro de Freitas" data-motorista="Caio Jovita">
+                            <td>Toyota Corolla</td>
+                            <td>KLM-0000</td>
+                            <td>27,0 L</td>
+                            <td>R$ 162,00</td>
+                            <td>330 km</td>
+                            <td>R$ 1,76</td>
+                            <td>R$ 420,00</td>
+                        </tr>
+
+                        <tr data-unidade="Camaçari" data-motorista="Roberto">
+                            <td>Flashback</td>
+                            <td>DEF-4567</td>
+                            <td>38,0 L</td>
+                            <td>R$ 228,00</td>
+                            <td>310 km</td>
+                            <td>R$ 0,74</td>
+                            <td>R$ 0,00</td>
+                        </tr>
+
+                        <tr data-unidade="Camaçari" data-motorista="Rogério">
+                            <td>Porsche 911</td>
+                            <td>HIJ-9999</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>180 km</td>
+                            <td>—</td>
+                            <td>R$ 350,00</td>
+                        </tr>
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total da frota</th>
+                            <td></td>
+                            <td>117,0 L</td>
+                            <td>R$ 702,00</td>
+                            <td>1.240 km</td>
+                            <td>R$ 1,65</td>
+                            <td>R$ 1.350,00</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="7">
+                                Custo por km = (valor abastecido + custo de manutenção) ÷ km rodados.
+                                O símbolo "—" indica que não houve abastecimento no período.
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+            </section>
+
+            <section class="historico" aria-labelledby="titulo-exportar">
+
+                <h2 id="titulo-exportar">Exportar relatório</h2>
+
+                <p>
+                    O arquivo é gerado com os mesmos dados e filtros da tela,
+                    com data e hora de geração.
+                </p>
+
+                <div class="filtros">
+                    <button type="button">Exportar PDF</button>
+                    <button type="button">Exportar planilha</button>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

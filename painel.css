@@ -1,0 +1,757 @@
+/* Resetando a página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 2px solid #000000;
+}
+
+header nav {
+    display: flex;
+    gap: 24px;
+}
+
+header a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Área principal */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Menu lateral */
+.menu {
+    width: 220px;
+    border-right: 2px solid #000000;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    border-bottom: 2px solid #000000;
+    font-weight: bold;
+}
+
+.menu a {
+    display: block;
+    padding: 16px 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+.menu li:hover,
+.menu li.atual {
+    background-color: #000;
+}
+
+.menu li:hover a,
+.menu li.atual a {
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    padding: 32px;
+}
+
+/* Página de reservas */
+.filtros {
+    margin: 16px 0;
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    border: 2px solid #000;
+    background: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.filtros button.ativo {
+    background: #000;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+td button {
+    margin-right: 6px;
+}
+
+/* esconde a linha que não combina com o filtro */
+.escondido {
+    display: none;
+}
+
+#pendencia{
+background: rgb(216, 168, 35);
+}
+
+#aprovacao{ 
+    background: rgb(46, 138, 28);
+}
+
+#recusados{ 
+    background: rgb(163, 26, 26);
+}
+
+.botoes-acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.botoes-acao button {
+    width: 95px;
+}
+
+/* ===== Manutenções ===== */
+
+#titulo-manutencao {
+    margin-bottom: 24px;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 32px;
+}
+
+/* Cards de indicadores */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.card span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#manu_vencida {
+    color: rgb(163, 26, 26);
+}
+
+#manu_realizada {
+    color: rgb(46, 138, 28);
+}
+
+#manu {
+    color: rgb(216, 168, 35);
+}
+
+/* Seções */
+.alertas,
+.veiculos-manutencao,
+.historico {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+section h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+/* Alertas */
+.lista-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.alerta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-left: 8px solid;
+}
+
+.vencida {
+    border-left-color: rgb(163, 26, 26);
+}
+
+.proxima {
+    border-left-color: rgb(216, 168, 35);
+}
+
+.alerta p {
+    color: #000;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.vencida .situacao span {
+    color: rgb(163, 26, 26);
+    font-weight: bold;
+}
+
+.proxima .situacao span {
+    color: rgb(216, 168, 35);
+    font-weight: bold;
+}
+
+.alerta button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.lista-veiculos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.veiculo {
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.veiculo h3 {
+    margin-bottom: 10px;
+}
+
+.veiculo p {
+    margin-top: 5px;
+}
+
+#registrar-manu,
+#nova-solicitacao {
+    margin-bottom: 24px;
+}
+
+#formulario-manutencao,
+#formulario-agendamento {
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    margin: 0;
+
+    background-color: #fff;
+    border: 2px solid #000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#formulario-manutencao label,
+#formulario-agendamento label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#formulario-manutencao input,
+#formulario-manutencao select,
+#formulario-agendamento input,
+#formulario-agendamento select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 2px solid #000;
+    font-size: 16px;
+}
+
+#formulario-manutencao button,
+#formulario-agendamento button {
+    padding: 12px 24px;
+    margin-top: 4px;
+}
+
+#formulario-manutencao button:hover,
+#formulario-agendamento button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#veiculos-filtros {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px;
+}
+
+/* Espaço entre o formulário de agendamento e a tabela */
+#formulario-agendamento {
+    margin-bottom: 32px;
+}
+
+/* Alinhamento dos avisos nas notificações */
+.lista-notificacoes .alerta {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) 150px;
+    align-items: center;
+    gap: 24px;
+}
+
+.lista-notificacoes .info-veiculo {
+    min-width: 0;
+}
+
+.lista-notificacoes .situacao {
+    min-width: 0;
+}
+
+.lista-notificacoes .alerta form {
+    margin: 0;
+}
+
+.lista-notificacoes .alerta button {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/* Filtros da página de relatórios */
+.filtros-detalhados {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filtros-detalhados label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 140px;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.filtros-detalhados input,
+.filtros-detalhados select {
+    width: 100%;
+    height: 36px;
+    padding: 6px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.filtros-detalhados button {
+    height: 36px;
+    min-width: 90px;
+    padding: 8px 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .filtros-detalhados label {
+        flex-basis: 100%;
+    }
+}
+
+
+  /* personalizando os cards de manutenção */
+.card-manutencao {
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-left: 5px solid #383838;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-manutencao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+.card-manutencao h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.card-manutencao p {
+    font-size: 14px;
+    margin: 9px 0;
+    color: #444;
+}
+
+.card-manutencao strong {
+    color: #222;
+}
+
+.lista-veiculos {
+    gap: 20px;
+}
+/* estilizando a barra de busca - manutenções */
+.busca-manutencoes {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+#buscar-manutencao {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#buscar-manutencao:focus {
+    border-color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+}
+
+.busca-manutencoes::before {
+    content: "⌕";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #777;
+    pointer-events: none;
+}
+
+#buscar-manutencao::placeholder {
+    color: #888;
+}
+
+.busca {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+#buscar-motorista {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#buscar-motorista:focus {
+    border-color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(56, 56, 56, 0.12);
+}
+
+.busca::before {
+    content: "⌕";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #777;
+    pointer-events: none;
+}
+
+#buscar-motorista::placeholder {
+    color: #888;
+}
+
+/* ===== Perfil do motorista ===== */
+
+.perfil-dados {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.perfil-dados p {
+    margin-top: 8px;
+}
+
+.perfil-dados p:first-child {
+    margin-top: 0;
+}
+
+.foto-perfil {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informacoes-cnh p {
+    margin-top: 8px;
+}
+
+.informacoes-cnh p:first-child {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .perfil-dados {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+/* ===== Check-list do motorista ===== */
+
+#form-retirada,
+#form-devolucao {
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    margin: 0 0 32px;
+
+    background-color: #fff;
+    border: 2px solid #000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#form-retirada label,
+#form-devolucao label {
+    font-weight: bold;
+    text-align: left;
+}
+
+#form-retirada input,
+#form-retirada select,
+#form-retirada textarea,
+#form-devolucao input,
+#form-devolucao select,
+#form-devolucao textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 2px solid #000;
+    font-size: 16px;
+}
+
+#form-retirada textarea,
+#form-devolucao textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#form-retirada button,
+#form-devolucao button {
+    padding: 12px 24px;
+    margin-top: 4px;
+}
+
+#form-retirada button:hover,
+#form-devolucao button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#form-retirada[hidden],
+#form-devolucao[hidden] {
+    display: none;
+}
+
+
+/* ======================================
+   RESPONSIVIDADE
+   (tablet e celular)
+====================================== */
+
+/* evita que o conteúdo "empurre" o layout para fora da tela */
+main {
+    min-width: 0;
+}
+
+.filtros {
+    flex-wrap: wrap;
+}
+
+/* ---------- Tablet (até 900px) ---------- */
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    /* menu lateral vira barra horizontal no topo */
+    .container {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 2px solid #000000;
+    }
+
+    .menu ul {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .menu li {
+        flex: 0 0 auto;
+        border-bottom: 0;
+        border-right: 2px solid #000000;
+        white-space: nowrap;
+    }
+
+    .menu a {
+        padding: 14px 18px;
+    }
+
+    main,
+    .conteudo {
+        padding: 20px 16px;
+    }
+
+    .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* tabelas rolam para o lado em vez de estourar a tela */
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Celular grande (até 700px) ---------- */
+@media (max-width: 700px) {
+    .lista-veiculos {
+        grid-template-columns: 1fr;
+    }
+
+    .alerta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .alerta button {
+        width: 100%;
+    }
+
+    .lista-notificacoes .alerta {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .alertas,
+    .veiculos-manutencao,
+    .historico {
+        padding: 16px;
+    }
+}
+
+/* ---------- Celular (até 560px) ---------- */
+@media (max-width: 560px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .card span {
+        font-size: 24px;
+    }
+
+    .filtros button {
+        flex: 1 1 auto;
+    }
+
+    #formulario-manutencao,
+    #formulario-agendamento,
+    #form-retirada,
+    #form-devolucao {
+        padding: 16px;
+    }
+
+    .busca,
+    .busca-manutencoes {
+        max-width: 100%;
+    }
+}

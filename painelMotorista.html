@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS - Route Tech System</title>
+    <link rel="stylesheet" href="painel.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>RTS - Route Tech System</h1>
+
+        <nav aria-label="Navegação da conta">
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li class="atual">
+                    <a href="painelMotorista.html" aria-current="page">Dashboard</a>
+                </li>
+                <li><a href="perfilMotorista.html">Perfil</a></li>
+                <li><a href="agendamentoMotorista.html">Agendamento</a></li>
+                <li><a href="frotasMotorista.html">Frotas</a></li>
+                <li><a href="checklistMotorista.html">Check-List</a></li>
+                <li><a href="notificacoesMotorista.html">Notificações</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo dashboard">
+            <h2 id="titulo-inicio">Início</h2>
+            <h4>Olá, João da Silva — <span id="data-hoje">17/11/2026</span></h4>
+
+            <!-- Indicadores -->
+            <section class="indicadores" aria-label="Resumo do motorista">
+                <a class="card" href="agendamentoMotorista.html">
+                    <h3>Próxima reserva</h3>
+                    <span>20/11</span>
+                    <p>Porsche 911, às 14:00</p>
+                </a>
+                <a class="card" href="notificacoesMotorista.html">
+                    <h3>Notificações não lidas</h3>
+                    <span class="status-alerta">03</span>
+                </a>
+                <a class="card" href="perfilMotorista.html">
+                    <h3>Viagens concluídas</h3>
+                    <span>03</span>
+                    <p>nas últimas semanas</p>
+                </a>
+                <a class="card" href="perfilMotorista.html">
+                    <h3>Situação da CNH</h3>
+                    <span id="cnh-status" class="valor-texto"></span>
+                    <p>Validade: 31/12/2025</p>
+                </a>
+            </section>
+
+            <!-- Atalhos -->
+            <section class="historico" aria-labelledby="titulo-atalhos">
+                <h2 id="titulo-atalhos">Acesso rápido</h2>
+
+                <div class="atalhos">
+                    <a class="atalho" href="agendamentoMotorista.html">
+                        <strong>Nova solicitação</strong>
+                        <small>Reservar um veículo.</small>
+                    </a>
+                    <a class="atalho" href="frotasMotorista.html">
+                        <strong>Consultar frotas</strong>
+                        <small>Ver veículos disponíveis.</small>
+                    </a>
+                    <a class="atalho" href="checklistMotorista.html">
+                        <strong>Check-List</strong>
+                        <small>Retirada ou devolução.</small>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Avisos -->
+            <section class="historico" aria-labelledby="titulo-avisos">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-avisos">Avisos recentes</h2>
+                    <a class="ver-mais" href="notificacoesMotorista.html">Ver todas as notificações</a>
+                </div>
+
+                <div class="lista-alertas lista-notificacoes">
+                    <div class="alerta proxima">
+                        <div class="info-veiculo">
+                            <h3>● Devolução em 1 hora: Toyota Corolla (KLM-0000)</h3>
+                            <p>16/11/2026 às 16:00</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Lembrete de devolução</span>
+                            <p>Não lida</p>
+                        </div>
+                        <form action="checklistMotorista.html">
+                            <button type="submit">Devolver veículo</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta aprovada">
+                        <div class="info-veiculo">
+                            <h3>● Reserva aprovada: Porsche 911, 20/11/2026 às 14:00</h3>
+                            <p>16/11/2026 às 10:20</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Reserva aprovada</span>
+                            <p>Não lida</p>
+                        </div>
+                        <form action="agendamentoMotorista.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+
+                    <div class="alerta vencida">
+                        <div class="info-veiculo">
+                            <h3>● Reserva recusada: Ford GT, 01/01/2023. Motivo: veículo reservado para outra turma.</h3>
+                            <p>15/11/2026 às 17:45</p>
+                        </div>
+                        <div class="situacao">
+                            <span>Reserva recusada</span>
+                            <p>Não lida</p>
+                        </div>
+                        <form action="agendamentoMotorista.html">
+                            <button type="submit">Ver reserva</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Frota -->
+            <section class="historico" aria-labelledby="titulo-frota">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-frota">Frota agora</h2>
+                    <a class="ver-mais" href="frotasMotorista.html">Consultar por período</a>
+                </div>
+
+                <div class="tabela-rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Veículo</th>
+                                <th scope="col">Placa</th>
+                                <th scope="col">Combustível</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Porsche 911</td>
+                                <td>HIJ-9999</td>
+                                <td>Gasolina</td>
+                                <td class="status-ok">Disponível</td>
+                                <td>
+                                    <form action="agendamentoMotorista.html">
+                                        <div class="botoes-acao">
+                                            <button type="submit">Solicitar</button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Toyota Corolla</td>
+                                <td>KLM-0000</td>
+                                <td>Gasolina</td>
+                                <td class="status-ok">Disponível</td>
+                                <td>
+                                    <form action="agendamentoMotorista.html">
+                                        <div class="botoes-acao">
+                                            <button type="submit">Solicitar</button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fiat Argo</td>
+                                <td>NOP-1111</td>
+                                <td>Flex</td>
+                                <td class="status-erro">Em uso até 17:00</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>Volkswagen Gol</td>
+                                <td>QRS-2222</td>
+                                <td>Flex</td>
+                                <td class="status-erro">Em uso até 11:00</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Últimas viagens -->
+            <section class="historico" aria-labelledby="titulo-viagens">
+                <div class="cabecalho-secao">
+                    <h2 id="titulo-viagens">Últimas viagens</h2>
+                    <a class="ver-mais" href="perfilMotorista.html">Ver histórico</a>
+                </div>
+                <div class="tabela-rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Veículo</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>10/11/2026</td><td>Fiat Argo</td><td>Salvador - BA</td><td>Concluída</td></tr>
+                            <tr><td>05/11/2026</td><td>Chevrolet Onix</td><td>Lauro de Freitas - BA</td><td>Concluída</td></tr>
+                            <tr><td>28/10/2026</td><td>Ford Ka</td><td>Camaçari - BA</td><td>Concluída</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

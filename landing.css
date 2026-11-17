@@ -1,0 +1,246 @@
+*{
+margin: 0;
+padding: 0;
+font-family: Arial;
+box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 60px;
+    height: 100px;
+    padding: 0px 80px;
+
+    background: white;
+    border-bottom: 2px solid black;
+}
+
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo::before{
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: black;
+    margin-right: 8px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+    height: 100%;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+
+    height: 100%;
+}
+
+.item:hover .info{
+    display: block;
+}
+
+.item span::before{
+    content: "▾ ";
+}
+
+.info{
+    display: none;
+    position: absolute;
+
+    top: 100%;
+    width: 100%;
+    left: 0;
+
+    padding: 20px 80px;
+    z-index: 10;
+
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid black;
+    font-weight: normal;
+}
+
+.info p{
+    margin-top: 5px;
+}
+
+.botao{
+    border: 2px solid black;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.botao:hover{
+    color: white;
+    background: black;
+}
+
+
+.espacamento{
+    min-height: 300px;
+}
+
+.infos-projeto{
+    background: black;
+    text-align: center;
+
+    padding: 40px 20px;
+    min-height: 300px;
+
+    color: white;
+}
+
+.infos-projeto h2{
+    margin-bottom: 20px;
+}
+
+.espaco-final{
+    height: 120px;
+}
+
+.pe{
+    min-height: 100px;
+    background: black;
+
+    padding: 30px 80px;
+    margin-top: auto;
+
+    color: white;
+}
+
+.pe p{
+    margin-top: 5px;
+}
+
+
+/* ======================================
+   RESPONSIVIDADE
+====================================== */
+
+/* menu "Sobre nós / Suporte" também abre no toque/teclado */
+.item:focus-within .info {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 16px 24px;
+        padding: 16px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .logo::before {
+        width: 22px;
+        height: 22px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 12px 20px;
+    }
+
+    .item {
+        height: auto;
+        padding: 8px 0;
+    }
+
+    .info {
+        padding: 16px 20px;
+    }
+
+    .espacamento {
+        min-height: 120px;
+    }
+
+    .espaco-final {
+        height: 60px;
+    }
+
+    .pe {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .botao {
+        padding: 10px 16px;
+    }
+
+    .infos-projeto {
+        padding: 32px 16px;
+    }
+}
+
+
+/* ======================================
+   AJUSTE FINO NO CELULAR (página inicial)
+====================================== */
+
+@media (max-width: 560px) {
+    /* Sobre nós / Suporte na 1ª linha, os 3 botões iguais na 2ª */
+    nav {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        width: 100%;
+    }
+
+    .item {
+        grid-column: span 3;
+        justify-content: center;
+    }
+
+    .botao {
+        grid-column: span 2;
+        padding: 10px 4px;
+        text-align: center;
+    }
+
+    /* bloco preto com o texto centralizado, sem ficar "achatado" no topo */
+    .infos-projeto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 240px;
+        padding: 32px 20px;
+    }
+
+    .infos-projeto h2 {
+        font-size: 22px;
+    }
+
+    .espacamento {
+        min-height: 80px;
+    }
+
+    .espaco-final {
+        height: 80px;
+    }
+}

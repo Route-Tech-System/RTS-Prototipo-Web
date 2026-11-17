@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motoristas - RTS</title>
+  <link rel="stylesheet" href="painel.css">
+</head>
+<body>
+
+  <header>
+    <h1>RTS - Route Tech System</h1>
+    <nav>
+      <a href="index.html">Sair</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav class="menu">
+      <ul>
+        <li><a href="painel.html">Dashboard</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="veiculos.html">Veiculos</a></li>
+        <li class="atual"><a href="motoristas.html">Motoristas</a></li>
+        <li><a href="manutencoes.html">Manutenções</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="notificacoes.html">Notificações</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Motoristas</h2>
+      <h4>Lista de Motoristas</h4>
+
+      <div class="filtros">
+        <button data-filtro="todos" class="ativo">Todos</button>
+        <button id="aprovacao" data-filtro="ativo">Ativo</button>
+        <button id="recusados" data-filtro="inativo">Inativo</button>
+      </div>
+
+      <div class="busca">
+         <input 
+         type="text" 
+         id="buscar-motorista" 
+         placeholder="Buscar por nome ou matrícula...">
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Categoria CNH</th>
+            <th>Válidade CNH</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr data-status="ativo">
+            <td>Julia Ribeiro</td>
+            <td>025.955258</td>
+            <td>juliaribeiro@senai.com.br</td>
+            <td>(71) 9 9999-9999</td>
+            <td>AB</td>
+            <td class="status">Ativo</td>
+            <td>
+              <div class="botoes-acao">
+              <button class="aprovar">Ativar</button>
+              <button class="recusar">Desativar</button>
+              </div>   
+            </td>
+          </tr>
+
+          <tr data-status="ativo">
+            <td>Roberto</td>
+            <td>025.946178</td>
+            <td>roberto@senai.com.br</td>
+            <td>(71) 9 9999-8888</td>
+            <td>AB</td>
+            <td class="status">Ativo</td>
+            <td>
+               <div class="botoes-acao">
+               <button class="aprovar">Ativar</button>
+               <button class="recusar">Desativar</button>
+               </div>   
+            </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr data-status="ativo">
+            <td>Rogério</td>
+            <td>018.656442</td>
+            <td>rogerio@senai.com.br</td>
+            <td>(71) 9 9999-5555</td>
+            <td>AB</td>
+            <td class="status">Ativo</td>
+            <td>
+              <div class="botoes-acao">
+              <button class="aprovar">Ativar</button>
+              <button class="recusar">Desativar</button>
+              </div>              
+            </td>
+          </tr>
+
+          <tr data-status="inativo">
+            <td>Caio Jovita</td>
+            <td>013.565546</td>
+            <td>caiojovita@senai.com.br</td>
+            <td>(71) 9 7777-9999</td>
+            <td>B</td>
+            <td class="status">Inativo</td>
+            <td>
+              <div class="botoes-acao">
+              <button class="aprovar">Ativar</button>
+              <button class="recusar">Desativar</button>
+              </div>   
+            </td>
+          </tr>
+        </tbody>
+        
+      </table>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
